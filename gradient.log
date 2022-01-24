@@ -1,0 +1,3220 @@
+reference camera R, t:
+ tensor([[[-0.8660, -0.3830, -0.3214],
+         [ 0.0000,  0.6428, -0.7660],
+         [ 0.5000, -0.6634, -0.5567]]], device='cuda:0') tensor([[-0.0000, -0.0000, 0.7000]], device='cuda:0')
+reference quaternion:  tensor([[-0.0000, -0.0000,  0.7000, -0.2346, -0.1094,  0.8754, -0.4082]],
+       device='cuda:0')
+normalized quat:  Parameter containing:
+tensor([ 0.0400,  0.0000,  0.7000, -0.2000, -0.1000,  0.9063, -0.4260],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.4473,  dist=0.4445
+depth loss:  tensor(554.1135, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0028, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 3.9999999e-02  0.0000000e+00 -5.9604645e-08  3.4569710e-02
+  9.3816593e-03  3.0873895e-02 -1.7782122e-02]
+
+------------------0/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0400,  0.0000,  0.7000, -0.2000, -0.1000,  0.9063, -0.4260],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0400,  0.0000,  0.7000, -0.2000, -0.1000,  0.9063, -0.4260],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.4473,  dist=0.4445
+depth loss:  tensor(554.1135, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0028, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 3.9999999e-02  0.0000000e+00 -5.9604645e-08  3.4569710e-02
+  9.3816593e-03  3.0873895e-02 -1.7782122e-02]
+>>> camera pose gradient:  [ 1.5287502  -0.31313694 56.263554    2.5535781  -1.2769711   0.7896905
+  0.25840408]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0300,  0.0100,  0.6900, -0.2100, -0.0900,  0.8963, -0.4360],
+       device='cuda:0', requires_grad=True)
+
+------------------1/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0300,  0.0100,  0.6900, -0.2100, -0.0900,  0.8963, -0.4360],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0300,  0.0100,  0.6900, -0.2100, -0.0900,  0.8963, -0.4360],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.5105,  dist=0.5081
+depth loss:  tensor(490.6868, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0021, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.03        0.01       -0.01000005  0.02456971  0.01938166  0.0208739
+ -0.02778211]
+>>> camera pose gradient:  [ 1.1161868e-01  1.4774294e+00 -2.9355061e+01  1.4106319e+00
+ -9.4245887e-01  2.1749943e-02 -8.7809879e-01]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0249,  0.0057,  0.6880, -0.2177, -0.0814,  0.8914, -0.4321],
+       device='cuda:0', requires_grad=True)
+
+------------------2/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0249,  0.0057,  0.6880, -0.2177, -0.0814,  0.8914, -0.4321],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0249,  0.0057,  0.6880, -0.2177, -0.0814,  0.8914, -0.4321],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.5862,  dist=0.5834
+depth loss:  tensor(415.1592, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0012, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.02487375  0.0057408  -0.01199287  0.01691777  0.02801156  0.01598722
+ -0.02391291]
+>>> camera pose gradient:  [ -0.2636027    2.3824859  -55.842575     1.489617    -1.0136046
+  -0.05616923  -1.0140486 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 2.2273e-02,  3.8417e-04,  6.9042e-01, -2.2464e-01, -7.2984e-02,
+         8.8859e-01, -4.2633e-01], device='cuda:0', requires_grad=True)
+
+------------------3/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 2.2273e-02,  3.8417e-04,  6.9042e-01, -2.2464e-01, -7.2984e-02,
+         8.8859e-01, -4.2633e-01], device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 2.2273e-02,  3.8417e-04,  6.9042e-01, -2.2464e-01, -7.2984e-02,
+         8.8859e-01, -4.2633e-01], device='cuda:0', requires_grad=True)
+confidence, iou = 0.6431,  dist=0.6407
+depth loss:  tensor(358.0996, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0007, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.02227342  0.00038417 -0.0095818   0.00992772  0.03639731  0.01316363
+ -0.01810873]
+>>> camera pose gradient:  [  0.48507836   2.6407018  -42.393665     3.0550973   -1.8730787
+   0.16929853  -1.1977991 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0195, -0.0060,  0.6943, -0.2317, -0.0660,  0.8860, -0.4199],
+       device='cuda:0', requires_grad=True)
+
+------------------4/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0195, -0.0060,  0.6943, -0.2317, -0.0660,  0.8860, -0.4199],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0195, -0.0060,  0.6943, -0.2317, -0.0660,  0.8860, -0.4199],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.6882,  dist=0.6860
+depth loss:  tensor(312.8762, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.01950193 -0.0059512  -0.00567257  0.00288452  0.04335161  0.01053381
+ -0.01171598]
+>>> camera pose gradient:  [ 2.312255  -0.8871092 65.07597    4.5960627 -1.8395339  2.1283317
+  2.0563254]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0157, -0.0099,  0.6944, -0.2377, -0.0584,  0.8828, -0.4196],
+       device='cuda:0', requires_grad=True)
+
+------------------5/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0157, -0.0099,  0.6944, -0.2377, -0.0584,  0.8828, -0.4196],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0157, -0.0099,  0.6944, -0.2377, -0.0584,  0.8828, -0.4196],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.7309,  dist=0.7285
+depth loss:  tensor(270.2833, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.01567923 -0.00992313 -0.00556767 -0.00309592  0.05101359  0.00735658
+ -0.01134348]
+>>> camera pose gradient:  [ 2.1076488 -2.978055  88.81676    5.058597  -1.0740486  4.207648
+  5.989662 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0107, -0.0106,  0.6924, -0.2441, -0.0511,  0.8794, -0.4216],
+       device='cuda:0', requires_grad=True)
+
+------------------6/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0107, -0.0106,  0.6924, -0.2441, -0.0511,  0.8794, -0.4216],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0107, -0.0106,  0.6924, -0.2441, -0.0511,  0.8794, -0.4216],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.7829,  dist=0.7809
+depth loss:  tensor(218.1210, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.01072205 -0.01055649 -0.00764138 -0.00950411  0.05827261  0.00395828
+ -0.0133771 ]
+>>> camera pose gradient:  [ -0.36283386  -1.8365351  -10.406013    -0.14577942   0.620246
+   0.97946      1.9248977 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0070, -0.0099,  0.6909, -0.2492, -0.0459,  0.8762, -0.4239],
+       device='cuda:0', requires_grad=True)
+
+------------------7/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0070, -0.0099,  0.6909, -0.2492, -0.0459,  0.8762, -0.4239],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0070, -0.0099,  0.6909, -0.2492, -0.0459,  0.8762, -0.4239],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8236,  dist=0.8210
+depth loss:  tensor(177.7147, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00701244 -0.00988571 -0.00909448 -0.01463386  0.06350946  0.00076199
+ -0.01563919]
+>>> camera pose gradient:  [-2.23760748e+00  6.28297389e-01 -1.24403870e+02 -3.84531641e+00
+  2.04425001e+00 -9.87470865e-01 -1.12116836e-01]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0057, -0.0097,  0.6918, -0.2521, -0.0437,  0.8740, -0.4257],
+       device='cuda:0', requires_grad=True)
+
+------------------8/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0057, -0.0097,  0.6918, -0.2521, -0.0437,  0.8740, -0.4257],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0057, -0.0097,  0.6918, -0.2521, -0.0437,  0.8740, -0.4257],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8311,  dist=0.8286
+depth loss:  tensor(170.1407, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00565536 -0.00970333 -0.00819308 -0.01752977  0.06569763 -0.00146288
+ -0.01747301]
+>>> camera pose gradient:  [-2.3224716e+00 -4.0070206e-02 -1.0370535e+02 -4.5545530e+00
+  2.3828762e+00 -1.2991146e+00 -3.1398246e-01]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0062, -0.0095,  0.6939, -0.2531, -0.0437,  0.8726, -0.4271],
+       device='cuda:0', requires_grad=True)
+
+------------------9/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0062, -0.0095,  0.6939, -0.2531, -0.0437,  0.8726, -0.4271],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0062, -0.0095,  0.6939, -0.2531, -0.0437,  0.8726, -0.4271],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8322,  dist=0.8300
+depth loss:  tensor(168.8748, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.6784e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00616064 -0.00952853 -0.00607586 -0.01848118  0.06563595 -0.00282085
+ -0.01892319]
+>>> camera pose gradient:  [ -2.4842281  -1.7343892 -36.70173    -5.307657    2.6761763  -1.727495
+  -0.7517976]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0081, -0.0085,  0.6962, -0.2523, -0.0453,  0.8721, -0.4282],
+       device='cuda:0', requires_grad=True)
+
+------------------10/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0081, -0.0085,  0.6962, -0.2523, -0.0453,  0.8721, -0.4282],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0081, -0.0085,  0.6962, -0.2523, -0.0453,  0.8721, -0.4282],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8268,  dist=0.8247
+depth loss:  tensor(174.2441, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.1617e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00809583 -0.00848268 -0.00382805 -0.01771109  0.06405412 -0.00333863
+ -0.01995847]
+>>> camera pose gradient:  [-0.29485598 -3.5251367  74.13543    -2.7877464   1.0030913  -1.6498529
+ -1.9142623 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0099, -0.0063,  0.6972, -0.2509, -0.0472,  0.8722, -0.4286],
+       device='cuda:0', requires_grad=True)
+
+------------------11/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0099, -0.0063,  0.6972, -0.2509, -0.0472,  0.8722, -0.4286],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0099, -0.0063,  0.6972, -0.2509, -0.0472,  0.8722, -0.4286],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8152,  dist=0.8131
+depth loss:  tensor(185.8283, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.2500e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0099238  -0.00627358 -0.00277698 -0.01628636  0.06215468 -0.00320709
+ -0.02037567]
+>>> camera pose gradient:  [  1.6996789   -2.99722    102.78595     -0.35673016  -0.589433
+  -1.5979868   -3.0688987 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0105, -0.0032,  0.6970, -0.2495, -0.0486,  0.8729, -0.4282],
+       device='cuda:0', requires_grad=True)
+
+------------------12/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0105, -0.0032,  0.6970, -0.2495, -0.0486,  0.8729, -0.4282],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0105, -0.0032,  0.6970, -0.2495, -0.0486,  0.8729, -0.4282],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8062,  dist=0.8044
+depth loss:  tensor(194.6860, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.8071e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.01054321 -0.00318437 -0.0030275  -0.0149651   0.06082587 -0.00256133
+ -0.02001676]
+>>> camera pose gradient:  [ 2.0555034  -1.2744205  66.364334   -0.73633987 -1.0267717  -2.780847
+ -5.2160892 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 9.9674e-03, -2.0976e-05,  6.9604e-01, -2.4820e-01, -4.9192e-02,
+         8.7432e-01, -4.2675e-01], device='cuda:0', requires_grad=True)
+
+------------------13/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 9.9674e-03, -2.0976e-05,  6.9604e-01, -2.4820e-01, -4.9192e-02,
+         8.7432e-01, -4.2675e-01], device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 9.9674e-03, -2.0976e-05,  6.9604e-01, -2.4820e-01, -4.9192e-02,
+         8.7432e-01, -4.2675e-01], device='cuda:0', requires_grad=True)
+confidence, iou = 0.8212,  dist=0.8193
+depth loss:  tensor(179.7446, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 9.9673551e-03 -2.0975793e-05 -3.9635301e-03 -1.3633281e-02
+  6.0190052e-02 -1.1091828e-03 -1.8529803e-02]
+>>> camera pose gradient:  [  1.3025713   1.6904068 -36.12725    -1.0600768  -1.2034256  -3.3647254
+  -6.238448 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0088,  0.0021,  0.6956, -0.2468, -0.0492,  0.8766, -0.4242],
+       device='cuda:0', requires_grad=True)
+
+------------------14/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0088,  0.0021,  0.6956, -0.2468, -0.0492,  0.8766, -0.4242],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0088,  0.0021,  0.6956, -0.2468, -0.0492,  0.8766, -0.4242],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8308,  dist=0.8287
+depth loss:  tensor(170.2527, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00878307  0.00211136 -0.00440019 -0.01221298  0.06022153  0.00120109
+ -0.01599932]
+>>> camera pose gradient:  [  -0.65018225    4.3645477  -133.98332      -0.46215075   -0.87907463
+   -1.9680259    -3.808254  ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0081,  0.0024,  0.6965, -0.2454, -0.0487,  0.8792, -0.4212],
+       device='cuda:0', requires_grad=True)
+
+------------------15/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0081,  0.0024,  0.6965, -0.2454, -0.0487,  0.8792, -0.4212],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0081,  0.0024,  0.6965, -0.2454, -0.0487,  0.8792, -0.4212],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8397,  dist=0.8378
+depth loss:  tensor(161.2453, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00807811  0.00235293 -0.00349319 -0.01086009  0.0606648   0.00381678
+ -0.01301578]
+>>> camera pose gradient:  [  -0.3894837    3.9973304 -122.267426    -0.5012225   -0.971513
+   -2.1912384   -4.29556  ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0077,  0.0014,  0.6984, -0.2441, -0.0479,  0.8822, -0.4178],
+       device='cuda:0', requires_grad=True)
+
+------------------16/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0077,  0.0014,  0.6984, -0.2441, -0.0479,  0.8822, -0.4178],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0077,  0.0014,  0.6984, -0.2441, -0.0479,  0.8822, -0.4178],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8523,  dist=0.8508
+depth loss:  tensor(148.4652, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00765267  0.00143977 -0.00157547 -0.00955546  0.06150232  0.00675941
+ -0.00954896]
+>>> camera pose gradient:  [ 2.3050442   0.2668565  24.317219    0.25978297 -1.7121859  -2.740682
+ -5.8855114 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 6.1565e-03,  5.6186e-04,  6.9990e-01, -2.4304e-01, -4.6368e-02,
+         8.8557e-01, -4.1358e-01], device='cuda:0', requires_grad=True)
+
+------------------17/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 6.1565e-03,  5.6186e-04,  6.9990e-01, -2.4304e-01, -4.6368e-02,
+         8.8557e-01, -4.1358e-01], device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 6.1565e-03,  5.6186e-04,  6.9990e-01, -2.4304e-01, -4.6368e-02,
+         8.8557e-01, -4.1358e-01], device='cuda:0', requires_grad=True)
+confidence, iou = 0.8787,  dist=0.8772
+depth loss:  tensor(122.0454, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0061565   0.00056186 -0.00010449 -0.00846541  0.0630133   0.01014185
+ -0.0053595 ]
+>>> camera pose gradient:  [  3.105936   -3.3652122 147.15703     1.6501931  -1.5524117  -0.8449463
+  -2.7670505]
+>>> camera pose after   :  Parameter containing:
+tensor([ 3.9314e-03,  6.9640e-04,  6.9990e-01, -2.4244e-01, -4.4346e-02,
+         8.8879e-01, -4.0935e-01], device='cuda:0', requires_grad=True)
+
+------------------18/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 3.9314e-03,  6.9640e-04,  6.9990e-01, -2.4244e-01, -4.4346e-02,
+         8.8879e-01, -4.0935e-01], device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 3.9314e-03,  6.9640e-04,  6.9990e-01, -2.4244e-01, -4.4346e-02,
+         8.8879e-01, -4.0935e-01], device='cuda:0', requires_grad=True)
+confidence, iou = 0.9129,  dist=0.9115
+depth loss:  tensor(87.8066, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393138  0.0006964  -0.00010175 -0.0078714   0.06503585  0.01336843
+ -0.00113529]
+>>> camera pose gradient:  [ 4.3850593e-02 -4.1804237e+00  6.9553909e+01 -3.0984992e-01
+  1.1640677e+00  1.6429496e+00  3.4428174e+00]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0019,  0.0019,  0.6994, -0.2418, -0.0431,  0.8912, -0.4063],
+       device='cuda:0', requires_grad=True)
+
+------------------19/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0019,  0.0019,  0.6994, -0.2418, -0.0431,  0.8912, -0.4063],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0019,  0.0019,  0.6994, -0.2418, -0.0431,  0.8912, -0.4063],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.9276,  dist=0.9262
+depth loss:  tensor(73.1010, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00194522  0.00192736 -0.00064629 -0.00727744  0.06631888  0.01576746
+  0.00196299]
+>>> camera pose gradient:  [  -3.163836     -0.39268097 -117.75439      -3.3893116     2.5471547
+    0.692038      3.068898  ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0014,  0.0031,  0.6998, -0.2406, -0.0430,  0.8931, -0.4041],
+       device='cuda:0', requires_grad=True)
+
+------------------20/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0014,  0.0031,  0.6998, -0.2406, -0.0430,  0.8931, -0.4041],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0014,  0.0031,  0.6998, -0.2406, -0.0430,  0.8931, -0.4041],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.9241,  dist=0.9224
+depth loss:  tensor(76.7554, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00135751  0.00312221 -0.0002166  -0.00601631  0.06636257  0.01770562
+  0.00414792]
+>>> camera pose gradient:  [  -3.263451      0.64364207 -124.12303      -2.7416081     2.1505473
+    0.7858239     2.9313078 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0020,  0.0040,  0.7011, -0.2389, -0.0439,  0.8946, -0.4027],
+       device='cuda:0', requires_grad=True)
+
+------------------21/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0020,  0.0040,  0.7011, -0.2389, -0.0439,  0.8946, -0.4027],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0020,  0.0040,  0.7011, -0.2389, -0.0439,  0.8946, -0.4027],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.9156,  dist=0.9141
+depth loss:  tensor(85.1540, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0005, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00197457  0.00401737  0.0011152  -0.00430925  0.0654891   0.01921499
+  0.00555813]
+>>> camera pose gradient:  [-1.6985738 -1.4427893  1.7847097  0.0639974  1.3130907  2.4023564
+  4.9382763]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0031,  0.0052,  0.7023, -0.2374, -0.0452,  0.8953, -0.4023],
+       device='cuda:0', requires_grad=True)
+
+------------------22/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0031,  0.0052,  0.7023, -0.2374, -0.0452,  0.8953, -0.4023],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0031,  0.0052,  0.7023, -0.2374, -0.0452,  0.8953, -0.4023],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8910,  dist=0.8894
+depth loss:  tensor(109.8106, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0005, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00310166  0.00518329  0.00228697 -0.00280356  0.06416091  0.01991475
+  0.00592807]
+>>> camera pose gradient:  [ 6.0691142e-01 -2.2893126e+00  8.4773888e+01  1.0108708e+00
+  5.5963427e-02  1.2659857e+00  1.9926897e+00]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0068,  0.7027, -0.2362, -0.0464,  0.8956, -0.4023],
+       device='cuda:0', requires_grad=True)
+
+------------------23/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0068,  0.7027, -0.2362, -0.0464,  0.8956, -0.4023],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0068,  0.7027, -0.2362, -0.0464,  0.8956, -0.4023],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8586,  dist=0.8569
+depth loss:  tensor(142.2199, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0005, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390161  0.00680247  0.00269592 -0.00167346  0.06295402  0.02020252
+  0.00590408]
+>>> camera pose gradient:  [ 1.6925845  -0.33551013 47.275795    3.455111   -1.3012316   1.6893042
+  1.6587317 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0083,  0.7027, -0.2360, -0.0470,  0.8954, -0.4026],
+       device='cuda:0', requires_grad=True)
+
+------------------24/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0083,  0.7027, -0.2360, -0.0470,  0.8954, -0.4026],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0083,  0.7027, -0.2360, -0.0470,  0.8954, -0.4026],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8355,  dist=0.8338
+depth loss:  tensor(165.3406, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0005, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00405005  0.00833144  0.00270957 -0.00138253  0.06241304  0.02001506
+  0.00559083]
+>>> camera pose gradient:  [  1.2990683    3.301384   -37.496735     3.4544966   -2.1165352
+   0.25303143  -1.4361287 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0089,  0.7030, -0.2364, -0.0466,  0.8952, -0.4027],
+       device='cuda:0', requires_grad=True)
+
+------------------25/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0089,  0.7030, -0.2364, -0.0466,  0.8952, -0.4027],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0089,  0.7030, -0.2364, -0.0466,  0.8952, -0.4027],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8336,  dist=0.8318
+depth loss:  tensor(167.3178, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0005, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00375205  0.00887395  0.00299823 -0.00183447  0.06279478  0.01978159
+  0.0055618 ]
+>>> camera pose gradient:  [  1.0290307   3.4481387 -39.434624    2.9529147  -2.0589478  -0.2338842
+  -2.2345233]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0031,  0.0085,  0.7035, -0.2374, -0.0454,  0.8951, -0.4023],
+       device='cuda:0', requires_grad=True)
+
+------------------26/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0031,  0.0085,  0.7035, -0.2374, -0.0454,  0.8951, -0.4023],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0031,  0.0085,  0.7035, -0.2374, -0.0454,  0.8951, -0.4023],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8414,  dist=0.8397
+depth loss:  tensor(159.4514, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0005, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00314686  0.00850499  0.00354505 -0.00284287  0.06397183  0.01963353
+  0.00592342]
+>>> camera pose gradient:  [ 1.0014262e+00  9.6202111e-01  2.1103760e+01  1.9369214e+00
+ -1.2652054e+00  1.8430999e-02 -1.1765739e+00]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0023,  0.0079,  0.7039, -0.2387, -0.0438,  0.8949, -0.4018],
+       device='cuda:0', requires_grad=True)
+
+------------------27/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0023,  0.0079,  0.7039, -0.2387, -0.0438,  0.8949, -0.4018],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0023,  0.0079,  0.7039, -0.2387, -0.0438,  0.8949, -0.4018],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8611,  dist=0.8593
+depth loss:  tensor(139.8158, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00227761  0.00793802  0.00388068 -0.00413921  0.06553553  0.01949632
+  0.00644982]
+>>> camera pose gradient:  [ 3.0672663e-01 -1.5131893e+00  7.7604919e+01 -6.3600317e-02
+ -9.5402263e-03 -6.0498316e-02 -3.1155503e-01]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0014,  0.0078,  0.7036, -0.2399, -0.0424,  0.8948, -0.4012],
+       device='cuda:0', requires_grad=True)
+
+------------------28/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0014,  0.0078,  0.7036, -0.2399, -0.0424,  0.8948, -0.4012],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0014,  0.0078,  0.7036, -0.2399, -0.0424,  0.8948, -0.4012],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8713,  dist=0.8694
+depth loss:  tensor(129.6584, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00139944  0.00780101  0.00361913 -0.00528705  0.06693946  0.01938897
+  0.00697458]
+>>> camera pose gradient:  [-0.7428434  -0.8828945  46.97336    -1.3874941   0.5730596  -0.48271495
+ -0.52168286]
+>>> camera pose after   :  Parameter containing:
+tensor([ 8.5343e-04,  7.8935e-03,  7.0305e-01, -2.4061e-01, -4.1413e-02,
+         8.9484e-01, -4.0068e-01], device='cuda:0', requires_grad=True)
+
+------------------29/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 8.5343e-04,  7.8935e-03,  7.0305e-01, -2.4061e-01, -4.1413e-02,
+         8.9484e-01, -4.0068e-01], device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 8.5343e-04,  7.8935e-03,  7.0305e-01, -2.4061e-01, -4.1413e-02,
+         8.9484e-01, -4.0068e-01], device='cuda:0', requires_grad=True)
+confidence, iou = 0.8735,  dist=0.8716
+depth loss:  tensor(127.4327, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00085343  0.00789354  0.0030461  -0.00603586  0.06796828  0.01941597
+  0.00753385]
+>>> camera pose gradient:  [-1.5708977  1.0554385 -9.171345  -2.268344   0.5347905 -1.5155029
+ -2.290679 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 8.7116e-04,  7.7201e-03,  7.0260e-01, -2.4082e-01, -4.0704e-02,
+         8.9525e-01, -3.9979e-01], device='cuda:0', requires_grad=True)
+
+------------------30/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 8.7116e-04,  7.7201e-03,  7.0260e-01, -2.4082e-01, -4.0704e-02,
+         8.9525e-01, -3.9979e-01], device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 8.7116e-04,  7.7201e-03,  7.0260e-01, -2.4082e-01, -4.0704e-02,
+         8.9525e-01, -3.9979e-01], device='cuda:0', requires_grad=True)
+confidence, iou = 0.8754,  dist=0.8735
+depth loss:  tensor(125.5616, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00087116  0.00772014  0.00259823 -0.00625184  0.06867768  0.01982546
+  0.00842485]
+>>> camera pose gradient:  [ -1.805783     2.0911026  -40.105263    -1.6071175    0.30683133
+  -1.1217062   -1.7891108 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0015,  0.0071,  0.7025, -0.2407, -0.0402,  0.8959, -0.3987],
+       device='cuda:0', requires_grad=True)
+
+------------------31/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0015,  0.0071,  0.7025, -0.2407, -0.0402,  0.8959, -0.3987],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0015,  0.0071,  0.7025, -0.2407, -0.0402,  0.8959, -0.3987],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8805,  dist=0.8787
+depth loss:  tensor(120.3750, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00146814  0.00705846  0.00248361 -0.00612406  0.06919224  0.02047694
+  0.00952727]
+>>> camera pose gradient:  [ -1.3742328    0.76701206 -11.218702    -0.51163423   0.4281445
+   0.33397743   0.7995731 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0024,  0.0063,  0.7025, -0.2405, -0.0399,  0.8964, -0.3978],
+       device='cuda:0', requires_grad=True)
+
+------------------32/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0024,  0.0063,  0.7025, -0.2405, -0.0399,  0.8964, -0.3978],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0024,  0.0063,  0.7025, -0.2405, -0.0399,  0.8964, -0.3978],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8849,  dist=0.8832
+depth loss:  tensor(115.9675, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0005, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00244473  0.00627961  0.00246078 -0.00590737  0.06948461  0.02097714
+  0.01038137]
+>>> camera pose gradient:  [-0.5022272 -0.7988771 35.172886   0.7009582  0.397836   1.5619888
+  2.8378415]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0035,  0.0058,  0.7022, -0.2404, -0.0398,  0.8965, -0.3975],
+       device='cuda:0', requires_grad=True)
+
+------------------33/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0035,  0.0058,  0.7022, -0.2404, -0.0398,  0.8965, -0.3975],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0035,  0.0058,  0.7022, -0.2404, -0.0398,  0.8965, -0.3975],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8782,  dist=0.8766
+depth loss:  tensor(122.6085, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00348214  0.00577272  0.00218993 -0.00585228  0.06959011  0.02103263
+  0.01066971]
+>>> camera pose gradient:  [ 0.6939565  -0.78397    34.60776     2.8776705  -0.33552417  2.7271757
+  4.2265196 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0055,  0.7017, -0.2409, -0.0396,  0.8958, -0.3980],
+       device='cuda:0', requires_grad=True)
+
+------------------34/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0055,  0.7017, -0.2409, -0.0396,  0.8958, -0.3980],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0055,  0.7017, -0.2409, -0.0396,  0.8958, -0.3980],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8730,  dist=0.8713
+depth loss:  tensor(127.8762, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00419218  0.00550583  0.00170088 -0.00637405  0.06981695  0.02039683
+  0.0102177 ]
+>>> camera pose gradient:  [ 1.0832558  -0.62834585 18.699234    3.8871074  -0.58589864  3.4054086
+  5.159486  ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0045,  0.0054,  0.7011, -0.2422, -0.0391,  0.8944, -0.3993],
+       device='cuda:0', requires_grad=True)
+
+------------------35/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0045,  0.0054,  0.7011, -0.2422, -0.0391,  0.8944, -0.3993],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0045,  0.0054,  0.7011, -0.2422, -0.0391,  0.8944, -0.3993],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8695,  dist=0.8678
+depth loss:  tensor(131.3530, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0004, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00448478  0.00541672  0.00112897 -0.00761296  0.07025096  0.01897115
+  0.00894535]
+>>> camera pose gradient:  [  0.6787506   0.7818525 -26.355099    3.1414404  -0.7050219   2.4033642
+   3.347651 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0045,  0.0051,  0.7008, -0.2439, -0.0385,  0.8925, -0.4010],
+       device='cuda:0', requires_grad=True)
+
+------------------36/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0045,  0.0051,  0.7008, -0.2439, -0.0385,  0.8925, -0.4010],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0045,  0.0051,  0.7008, -0.2439, -0.0385,  0.8925, -0.4010],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8719,  dist=0.8704
+depth loss:  tensor(128.8601, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0045317   0.00514949  0.00080162 -0.00934771  0.07091758  0.01708788
+  0.0072408 ]
+>>> camera pose gradient:  [  0.30369377   1.4732379  -47.148716     1.6879463   -0.64112824
+   0.9136413    0.88203835]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0045,  0.0046,  0.7008, -0.2458, -0.0376,  0.8906, -0.4027],
+       device='cuda:0', requires_grad=True)
+
+------------------37/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0045,  0.0046,  0.7008, -0.2458, -0.0376,  0.8906, -0.4027],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0045,  0.0046,  0.7008, -0.2458, -0.0376,  0.8906, -0.4027],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8771,  dist=0.8756
+depth loss:  tensor(123.6421, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00447736  0.0045571   0.00084072 -0.01124044  0.07176797  0.01516652
+  0.00556105]
+>>> camera pose gradient:  [ 0.46145195  0.05039142 -7.002168   -0.07935318 -0.17945144 -0.2270111
+ -0.6099297 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0043,  0.0040,  0.7009, -0.2475, -0.0368,  0.8889, -0.4041],
+       device='cuda:0', requires_grad=True)
+
+------------------38/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0043,  0.0040,  0.7009, -0.2475, -0.0368,  0.8889, -0.4041],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0043,  0.0040,  0.7009, -0.2475, -0.0368,  0.8889, -0.4041],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8821,  dist=0.8807
+depth loss:  tensor(118.6121, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00428201  0.00401248  0.0009253  -0.01292641  0.07260276  0.01349586
+  0.00415289]
+>>> camera pose gradient:  [ 0.16253617 -1.2131002  26.716684   -1.6980273   0.25381246 -1.3446038
+ -2.1026087 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0038,  0.7008, -0.2487, -0.0361,  0.8878, -0.4050],
+       device='cuda:0', requires_grad=True)
+
+------------------39/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0038,  0.7008, -0.2487, -0.0361,  0.8878, -0.4050],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0038,  0.7008, -0.2487, -0.0361,  0.8878, -0.4050],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8878,  dist=0.8865
+depth loss:  tensor(112.8440, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00405479  0.00381219  0.00081289 -0.01410766  0.07325415  0.01232934
+  0.00323799]
+>>> camera pose gradient:  [-0.3542165 -1.3008084 26.259537  -3.4574442  0.6951491 -2.5737398
+ -3.7339272]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0039,  0.7005, -0.2491, -0.0358,  0.8873, -0.4052],
+       device='cuda:0', requires_grad=True)
+
+------------------40/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0039,  0.7005, -0.2491, -0.0358,  0.8873, -0.4052],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0039,  0.7005, -0.2491, -0.0358,  0.8873, -0.4052],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8883,  dist=0.8869
+depth loss:  tensor(112.4226, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00396271  0.00394223  0.00052661 -0.01448874  0.07356834  0.01192254
+  0.00303864]
+>>> camera pose gradient:  [ -0.56686026  -0.23788029 -11.083267    -4.175929     0.75612205
+  -3.224946    -4.71161   ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0041,  0.7003, -0.2486, -0.0358,  0.8878, -0.4046],
+       device='cuda:0', requires_grad=True)
+
+------------------41/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0041,  0.7003, -0.2486, -0.0358,  0.8878, -0.4046],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0041,  0.7003, -0.2486, -0.0358,  0.8878, -0.4046],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8823,  dist=0.8809
+depth loss:  tensor(118.4118, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00405947  0.00411589  0.0003472  -0.01400904  0.0735556   0.01236105
+  0.00364572]
+>>> camera pose gradient:  [ -0.5830862    0.74421847 -39.60799     -3.376453     0.5715588
+  -2.6226356   -3.8808239 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0043,  0.0041,  0.7005, -0.2475, -0.0361,  0.8888, -0.4034],
+       device='cuda:0', requires_grad=True)
+
+------------------42/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0043,  0.0041,  0.7005, -0.2475, -0.0361,  0.8888, -0.4034],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0043,  0.0041,  0.7005, -0.2475, -0.0361,  0.8888, -0.4034],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8794,  dist=0.8781
+depth loss:  tensor(121.2808, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00433121  0.00409483  0.0004648  -0.01291266  0.07332094  0.01340955
+  0.00483939]
+>>> camera pose gradient:  [  0.05049372   0.27173525 -22.82868     -1.2611471    0.11250988
+  -1.0383236   -1.6781851 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0046,  0.0040,  0.7007, -0.2462, -0.0363,  0.8900, -0.4020],
+       device='cuda:0', requires_grad=True)
+
+------------------43/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0046,  0.0040,  0.7007, -0.2462, -0.0363,  0.8900, -0.4020],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0046,  0.0040,  0.7007, -0.2462, -0.0363,  0.8900, -0.4020],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8807,  dist=0.8793
+depth loss:  tensor(120.0198, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00455973  0.00401116  0.00073141 -0.01167786  0.07306586  0.0146119
+  0.00619343]
+>>> camera pose gradient:  [ 7.1913695e-01 -8.9697021e-01  1.3167757e+01  3.7814304e-01
+ -7.3794262e-03  5.8553195e-01  9.0619558e-01]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0045,  0.0041,  0.7009, -0.2452, -0.0365,  0.8910, -0.4010],
+       device='cuda:0', requires_grad=True)
+
+------------------44/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0045,  0.0041,  0.7009, -0.2452, -0.0365,  0.8910, -0.4010],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0045,  0.0041,  0.7009, -0.2452, -0.0365,  0.8910, -0.4010],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8793,  dist=0.8778
+depth loss:  tensor(121.4609, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00453769  0.00414949  0.00087863 -0.01064108  0.0728392   0.01554793
+  0.0072608 ]
+>>> camera pose gradient:  [ 7.7392113e-01 -1.1025536e+00  1.7041040e+01  1.3146856e+00
+ -1.4257637e-02  1.6143228e+00  2.6216607e+00]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0043,  0.0045,  0.7009, -0.2445, -0.0367,  0.8914, -0.4004],
+       device='cuda:0', requires_grad=True)
+
+------------------45/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0043,  0.0045,  0.7009, -0.2445, -0.0367,  0.8914, -0.4004],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0043,  0.0045,  0.7009, -0.2445, -0.0367,  0.8914, -0.4004],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8816,  dist=0.8801
+depth loss:  tensor(119.1429, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00427279  0.0045366   0.00089109 -0.00996675  0.07264076  0.01598793
+  0.00778416]
+>>> camera pose gradient:  [ 0.38861352 -0.42099217 -5.517397    1.3287543  -0.02735107  1.5725539
+  2.5282025 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0050,  0.7009, -0.2442, -0.0369,  0.8914, -0.4004],
+       device='cuda:0', requires_grad=True)
+
+------------------46/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0050,  0.7009, -0.2442, -0.0369,  0.8914, -0.4004],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0050,  0.7009, -0.2442, -0.0369,  0.8914, -0.4004],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8826,  dist=0.8810
+depth loss:  tensor(118.2321, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0003, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0039113   0.00498532  0.00094116 -0.00962135  0.07247283  0.01599193
+  0.00783348]
+>>> camera pose gradient:  [  0.07122408   0.7354003  -33.805965     0.9844822   -0.19308355
+   0.8773594    1.2090961 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0052,  0.7012, -0.2441, -0.0370,  0.8912, -0.4005],
+       device='cuda:0', requires_grad=True)
+
+------------------47/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0052,  0.7012, -0.2441, -0.0370,  0.8912, -0.4005],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0052,  0.7012, -0.2441, -0.0370,  0.8912, -0.4005],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8843,  dist=0.8827
+depth loss:  tensor(116.5288, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00356333  0.00521404  0.0012244  -0.00950427  0.07239705  0.01577669
+  0.00767612]
+>>> camera pose gradient:  [ -0.12460917   0.37156874 -17.255207     0.04654572   0.04846018
+   0.2584013    0.3837176 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0033,  0.0053,  0.7016, -0.2440, -0.0371,  0.8909, -0.4007],
+       device='cuda:0', requires_grad=True)
+
+------------------48/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0033,  0.0053,  0.7016, -0.2440, -0.0371,  0.8909, -0.4007],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0033,  0.0053,  0.7016, -0.2440, -0.0371,  0.8909, -0.4007],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8865,  dist=0.8849
+depth loss:  tensor(114.2784, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00328954  0.00533139  0.00160098 -0.00940804  0.0723099   0.01551849
+  0.00747043]
+>>> camera pose gradient:  [-0.42400464 -0.7784153  15.750986   -0.74958175  0.4061751  -0.07592562
+  0.09513023]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0032,  0.0056,  0.7018, -0.2437, -0.0373,  0.8907, -0.4009],
+       device='cuda:0', requires_grad=True)
+
+------------------49/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0032,  0.0056,  0.7018, -0.2437, -0.0373,  0.8907, -0.4009],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0032,  0.0056,  0.7018, -0.2437, -0.0373,  0.8907, -0.4009],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8824,  dist=0.8808
+depth loss:  tensor(118.4205, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00317743  0.00562263  0.00182903 -0.00917371  0.07207272  0.01530498
+  0.00726935]
+>>> camera pose gradient:  [-0.32823035 -0.8419955  21.63639    -1.1736796   0.3759285  -0.5996498
+ -0.8051637 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0032,  0.0061,  0.7019, -0.2433, -0.0377,  0.8907, -0.4010],
+       device='cuda:0', requires_grad=True)
+
+------------------50/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0032,  0.0061,  0.7019, -0.2433, -0.0377,  0.8907, -0.4010],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0032,  0.0061,  0.7019, -0.2433, -0.0377,  0.8907, -0.4010],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8751,  dist=0.8735
+depth loss:  tensor(125.7441, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00318056  0.00608568  0.00188172 -0.00873137  0.0717122   0.01526242
+  0.0072228 ]
+>>> camera pose gradient:  [-0.41900513  0.09940337  1.7877824  -0.93596685  0.11477936 -0.79629076
+ -1.3607842 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0033,  0.0065,  0.7019, -0.2427, -0.0380,  0.8908, -0.4008],
+       device='cuda:0', requires_grad=True)
+
+------------------51/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0033,  0.0065,  0.7019, -0.2427, -0.0380,  0.8908, -0.4008],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0033,  0.0065,  0.7019, -0.2427, -0.0380,  0.8908, -0.4008],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8693,  dist=0.8677
+depth loss:  tensor(131.4768, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00331631  0.00647891  0.00191659 -0.00814849  0.07134269  0.015423
+  0.00740829]
+>>> camera pose gradient:  [ -0.16146822   1.2863207  -21.90392     -0.05475519  -0.41590607
+  -0.70609754  -1.6447936 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0035,  0.0065,  0.7021, -0.2422, -0.0382,  0.8912, -0.4004],
+       device='cuda:0', requires_grad=True)
+
+------------------52/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0035,  0.0065,  0.7021, -0.2422, -0.0382,  0.8912, -0.4004],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0035,  0.0065,  0.7021, -0.2422, -0.0382,  0.8912, -0.4004],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8682,  dist=0.8666
+depth loss:  tensor(132.5985, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00348979  0.00652589  0.00210261 -0.00761281  0.07117271  0.01574403
+  0.00785035]
+>>> camera pose gradient:  [ 0.16911551  0.41033146  1.8770254   0.49001676 -0.3604958  -0.01714556
+ -0.44807196]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0065,  0.7023, -0.2418, -0.0382,  0.8915, -0.3999],
+       device='cuda:0', requires_grad=True)
+
+------------------53/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0065,  0.7023, -0.2418, -0.0382,  0.8915, -0.3999],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0065,  0.7023, -0.2418, -0.0382,  0.8915, -0.3999],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8677,  dist=0.8661
+depth loss:  tensor(133.0872, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00359231  0.00647017  0.00225687 -0.00722717  0.07116079  0.0160374
+  0.00832337]
+>>> camera pose gradient:  [ 0.46448576 -0.33033243 22.260914    1.011909   -0.31321025  0.6392795
+  0.69554543]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0035,  0.0065,  0.7022, -0.2416, -0.0381,  0.8916, -0.3996],
+       device='cuda:0', requires_grad=True)
+
+------------------54/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0035,  0.0065,  0.7022, -0.2416, -0.0381,  0.8916, -0.3996],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0035,  0.0065,  0.7022, -0.2416, -0.0381,  0.8916, -0.3996],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8686,  dist=0.8670
+depth loss:  tensor(132.1785, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00353703  0.00649895  0.00223845 -0.00707978  0.07127278  0.01614165
+  0.00863293]
+>>> camera pose gradient:  [ 0.38138628 -0.23367408 20.09377     1.0597826  -0.3078088   0.71064794
+  0.827766  ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0034,  0.0066,  0.7021, -0.2417, -0.0379,  0.8915, -0.3994],
+       device='cuda:0', requires_grad=True)
+
+------------------55/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0034,  0.0066,  0.7021, -0.2417, -0.0379,  0.8915, -0.3994],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0034,  0.0066,  0.7021, -0.2417, -0.0379,  0.8915, -0.3994],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8679,  dist=0.8662
+depth loss:  tensor(132.9682, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00336596  0.00658077  0.00207973 -0.00715655  0.07149431  0.01605767
+  0.00877306]
+>>> camera pose gradient:  [ 0.13685136  0.6710709  -5.6772866   0.83851576 -0.42488936  0.28473797
+  0.02447596]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0032,  0.0065,  0.7020, -0.2420, -0.0375,  0.8913, -0.3993],
+       device='cuda:0', requires_grad=True)
+
+------------------56/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0032,  0.0065,  0.7020, -0.2420, -0.0375,  0.8913, -0.3993],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0032,  0.0065,  0.7020, -0.2420, -0.0375,  0.8913, -0.3993],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8712,  dist=0.8696
+depth loss:  tensor(129.6341, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00316834  0.00649383  0.00197697 -0.00739156  0.07186054  0.01591069
+  0.00889516]
+>>> camera pose gradient:  [ -0.31929898   0.9274316  -16.839981     0.36592445  -0.21467535
+   0.11527167  -0.08535174]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0031,  0.0062,  0.7020, -0.2422, -0.0371,  0.8912, -0.3992],
+       device='cuda:0', requires_grad=True)
+
+------------------57/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0031,  0.0062,  0.7020, -0.2422, -0.0371,  0.8912, -0.3992],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0031,  0.0062,  0.7020, -0.2422, -0.0371,  0.8912, -0.3992],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8740,  dist=0.8724
+depth loss:  tensor(126.7938, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00309204  0.00619336  0.00200367 -0.00767566  0.07227466  0.01574939
+  0.00901943]
+>>> camera pose gradient:  [-0.302612   -0.03462364  5.900155    0.02495809  0.1047032   0.26890302
+  0.43716452]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0031,  0.0059,  0.7020, -0.2425, -0.0368,  0.8910, -0.3992],
+       device='cuda:0', requires_grad=True)
+
+------------------58/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0031,  0.0059,  0.7020, -0.2425, -0.0368,  0.8910, -0.3992],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0031,  0.0059,  0.7020, -0.2425, -0.0368,  0.8910, -0.3992],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8799,  dist=0.8783
+depth loss:  tensor(120.9081, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00311976  0.00593104  0.00198591 -0.00793649  0.07260652  0.01553667
+  0.00905797]
+>>> camera pose gradient:  [-0.31439853 -0.74200606 21.433983   -0.21537247  0.29616657  0.33320647
+  0.71220654]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0032,  0.0059,  0.7018, -0.2427, -0.0366,  0.8907, -0.3992],
+       device='cuda:0', requires_grad=True)
+
+------------------59/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0032,  0.0059,  0.7018, -0.2427, -0.0366,  0.8907, -0.3992],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0032,  0.0059,  0.7018, -0.2427, -0.0366,  0.8907, -0.3992],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8790,  dist=0.8774
+depth loss:  tensor(121.7726, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00324499  0.00587277  0.00181788 -0.00812872  0.07278896  0.01526135
+  0.00897303]
+>>> camera pose gradient:  [-0.31574088 -0.30918333  8.818329   -0.12942886  0.20432444  0.2678517
+  0.52595943]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0035,  0.0059,  0.7016, -0.2428, -0.0365,  0.8904, -0.3994],
+       device='cuda:0', requires_grad=True)
+
+------------------60/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0035,  0.0059,  0.7016, -0.2428, -0.0365,  0.8904, -0.3994],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0035,  0.0059,  0.7016, -0.2428, -0.0365,  0.8904, -0.3994],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8775,  dist=0.8759
+depth loss:  tensor(123.3101, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0002, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00345857  0.00589453  0.0016039  -0.00827618  0.07287288  0.0149461
+  0.00880808]
+>>> camera pose gradient:  [-6.5819472e-02  5.5217892e-01 -1.4500191e+01  2.7725124e-01
+ -1.6422443e-01  1.1978320e-01 -1.4292473e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0037,  0.0058,  0.7015, -0.2430, -0.0364,  0.8901, -0.3996],
+       device='cuda:0', requires_grad=True)
+
+------------------61/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0037,  0.0058,  0.7015, -0.2430, -0.0364,  0.8901, -0.3996],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0037,  0.0058,  0.7015, -0.2430, -0.0364,  0.8901, -0.3996],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8749,  dist=0.8733
+depth loss:  tensor(125.9029, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00367198  0.00578144  0.0015142  -0.00846407  0.07301316  0.01463199
+  0.0086619 ]
+>>> camera pose gradient:  [  0.10069104   0.5432748  -13.525475     0.30536267  -0.21160859
+   0.06767944  -0.1397145 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0055,  0.7015, -0.2433, -0.0362,  0.8898, -0.3997],
+       device='cuda:0', requires_grad=True)
+
+------------------62/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0055,  0.7015, -0.2433, -0.0362,  0.8898, -0.3997],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0055,  0.7015, -0.2433, -0.0362,  0.8898, -0.3997],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8766,  dist=0.8751
+depth loss:  tensor(124.1559, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00383202  0.00554892  0.00152957 -0.00869401  0.07322292  0.014332
+  0.00855377]
+>>> camera pose gradient:  [ 0.3042102  -0.15569156  3.9643912   0.376616   -0.15046939  0.24097557
+  0.2004848 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0054,  0.7015, -0.2435, -0.0359,  0.8894, -0.3998],
+       device='cuda:0', requires_grad=True)
+
+------------------63/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0054,  0.7015, -0.2435, -0.0359,  0.8894, -0.3998],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0054,  0.7015, -0.2435, -0.0359,  0.8894, -0.3998],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8777,  dist=0.8761
+depth loss:  tensor(123.1163, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00387883  0.00537695  0.00151521 -0.00897604  0.07347123  0.01400107
+  0.00842258]
+>>> camera pose gradient:  [ 0.32657677 -0.4162576  10.534157    0.17687635 -0.05187555  0.19703396
+  0.21865535]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0053,  0.7014, -0.2438, -0.0357,  0.8891, -0.4000],
+       device='cuda:0', requires_grad=True)
+
+------------------64/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0053,  0.7014, -0.2438, -0.0357,  0.8891, -0.4000],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0053,  0.7014, -0.2438, -0.0357,  0.8891, -0.4000],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8805,  dist=0.8789
+depth loss:  tensor(120.2824, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0038164   0.00532232  0.00142723 -0.00926532  0.0737154   0.01365328
+  0.00826752]
+>>> camera pose gradient:  [ 0.11786282 -0.23894395  3.8527417  -0.19318345  0.00986517 -0.10961208
+ -0.23952499]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0037,  0.0053,  0.7013, -0.2441, -0.0355,  0.8888, -0.4000],
+       device='cuda:0', requires_grad=True)
+
+------------------65/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0037,  0.0053,  0.7013, -0.2441, -0.0355,  0.8888, -0.4000],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0037,  0.0053,  0.7013, -0.2441, -0.0355,  0.8888, -0.4000],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8814,  dist=0.8799
+depth loss:  tensor(119.3457, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00372239  0.00533072  0.00132054 -0.00948739  0.07393144  0.01336765
+  0.00816828]
+>>> camera pose gradient:  [ -0.02843045   0.17789644 -10.115355    -0.29408696   0.01203351
+  -0.21485971  -0.40831202]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0053,  0.7013, -0.2442, -0.0353,  0.8886, -0.4001],
+       device='cuda:0', requires_grad=True)
+
+------------------66/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0053,  0.7013, -0.2442, -0.0353,  0.8886, -0.4001],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0053,  0.7013, -0.2442, -0.0353,  0.8886, -0.4001],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8838,  dist=0.8822
+depth loss:  tensor(116.9980, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00364682  0.00529536  0.00129658 -0.00962877  0.07412129  0.01316464
+  0.0081479 ]
+>>> camera pose gradient:  [ -0.21606225   0.17524652 -12.956955    -0.6429886    0.13312103
+  -0.399064    -0.611962  ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0052,  0.7014, -0.2442, -0.0351,  0.8885, -0.4000],
+       device='cuda:0', requires_grad=True)
+
+------------------67/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0052,  0.7014, -0.2442, -0.0351,  0.8885, -0.4000],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0052,  0.7014, -0.2442, -0.0351,  0.8885, -0.4000],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8843,  dist=0.8827
+depth loss:  tensor(116.4896, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00364813  0.00522118  0.00136757 -0.00962777  0.0742396   0.01308268
+  0.00823307]
+>>> camera pose gradient:  [-0.26511395 -0.29575515 -0.41833344 -0.6930197   0.24031788 -0.29756984
+ -0.36311933]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0037,  0.0052,  0.7014, -0.2441, -0.0351,  0.8885, -0.3998],
+       device='cuda:0', requires_grad=True)
+
+------------------68/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0037,  0.0052,  0.7014, -0.2441, -0.0351,  0.8885, -0.3998],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0037,  0.0052,  0.7014, -0.2441, -0.0351,  0.8885, -0.3998],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8834,  dist=0.8818
+depth loss:  tensor(117.4309, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(0.0001, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00373452  0.00522586  0.0014345  -0.0094884   0.07425094  0.01308417
+  0.00837126]
+>>> camera pose gradient:  [-0.0384309  -0.55323684  9.15258    -0.42615038  0.15851343 -0.1347164
+ -0.1554989 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0054,  0.7014, -0.2438, -0.0352,  0.8885, -0.3997],
+       device='cuda:0', requires_grad=True)
+
+------------------69/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0054,  0.7014, -0.2438, -0.0352,  0.8885, -0.3997],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0054,  0.7014, -0.2438, -0.0352,  0.8885, -0.3997],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8790,  dist=0.8774
+depth loss:  tensor(121.8064, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.9393e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00382472  0.00536396  0.00142932 -0.00927761  0.07419828  0.01311964
+  0.00852212]
+>>> camera pose gradient:  [ 0.07840323 -0.1654565   1.591254   -0.15390621  0.0037024  -0.0796341
+ -0.18422796]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0055,  0.7014, -0.2436, -0.0352,  0.8886, -0.3995],
+       device='cuda:0', requires_grad=True)
+
+------------------70/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0055,  0.7014, -0.2436, -0.0352,  0.8886, -0.3995],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0055,  0.7014, -0.2436, -0.0352,  0.8886, -0.3995],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8757,  dist=0.8742
+depth loss:  tensor(125.0249, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.6521e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00388072  0.00552844  0.00141323 -0.00905691  0.07414937  0.01317173
+  0.00868925]
+>>> camera pose gradient:  [ 0.09554935  0.20209548 -9.035427    0.05791821 -0.11156037 -0.04450219
+ -0.22378518]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0056,  0.7015, -0.2434, -0.0352,  0.8887, -0.3993],
+       device='cuda:0', requires_grad=True)
+
+------------------71/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0056,  0.7015, -0.2434, -0.0352,  0.8887, -0.3993],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0056,  0.7015, -0.2434, -0.0352,  0.8887, -0.3993],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8744,  dist=0.8728
+depth loss:  tensor(126.3914, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.3821e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390037  0.00562762  0.00146353 -0.00886971  0.07414965  0.01322997
+  0.00887781]
+>>> camera pose gradient:  [ 0.17365527  0.3069429  -7.6050787   0.26302963 -0.19821385  0.03374299
+ -0.16572872]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0056,  0.7016, -0.2433, -0.0352,  0.8887, -0.3991],
+       device='cuda:0', requires_grad=True)
+
+------------------72/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0056,  0.7016, -0.2433, -0.0352,  0.8887, -0.3991],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0056,  0.7016, -0.2433, -0.0352,  0.8887, -0.3991],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8752,  dist=0.8737
+depth loss:  tensor(125.5252, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.1091e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00386204  0.00564247  0.00156343 -0.00875382  0.07422874  0.01327389
+  0.00907585]
+>>> camera pose gradient:  [ 0.16355911 -0.1469757   3.5587244   0.22582479 -0.11393189  0.1297149
+  0.06462187]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0057,  0.7016, -0.2433, -0.0350,  0.8887, -0.3990],
+       device='cuda:0', requires_grad=True)
+
+------------------73/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0057,  0.7016, -0.2433, -0.0350,  0.8887, -0.3990],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0057,  0.7016, -0.2433, -0.0350,  0.8887, -0.3990],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8753,  dist=0.8737
+depth loss:  tensor(125.4730, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.8083e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0037747   0.00569156  0.00162786 -0.00869475  0.07434536  0.01328045
+  0.00924325]
+>>> camera pose gradient:  [ 0.03118136 -0.17968252  4.4085307   0.09558689 -0.04207255  0.09396576
+  0.05974293]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0037,  0.0058,  0.7017, -0.2432, -0.0349,  0.8887, -0.3988],
+       device='cuda:0', requires_grad=True)
+
+------------------74/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0037,  0.0058,  0.7017, -0.2432, -0.0349,  0.8887, -0.3988],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0037,  0.0058,  0.7017, -0.2432, -0.0349,  0.8887, -0.3988],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8753,  dist=0.8738
+depth loss:  tensor(125.4657, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.4936e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00368594  0.00577946  0.00165421 -0.00866075  0.07446718  0.01326245
+  0.00938389]
+>>> camera pose gradient:  [-6.0588121e-04 -8.8983744e-02  1.6511471e+00  1.7670169e-02
+ -2.4131855e-02  3.4945134e-02 -2.4080327e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0059,  0.7017, -0.2432, -0.0348,  0.8887, -0.3987],
+       device='cuda:0', requires_grad=True)
+
+------------------75/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0059,  0.7017, -0.2432, -0.0348,  0.8887, -0.3987],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0059,  0.7017, -0.2432, -0.0348,  0.8887, -0.3987],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8757,  dist=0.8741
+depth loss:  tensor(125.1027, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.1823e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00360617  0.00588031  0.00166607 -0.00863367  0.07458656  0.01323736
+  0.00951469]
+>>> camera pose gradient:  [-6.4067110e-02  1.5013996e-01 -3.6958776e+00  1.9080117e-02
+ -4.7091980e-02  3.1173447e-04 -9.8405138e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0059,  0.7017, -0.2432, -0.0347,  0.8886, -0.3986],
+       device='cuda:0', requires_grad=True)
+
+------------------76/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0059,  0.7017, -0.2432, -0.0347,  0.8886, -0.3986],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0059,  0.7017, -0.2432, -0.0347,  0.8886, -0.3986],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8757,  dist=0.8741
+depth loss:  tensor(125.1176, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.8838e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00355506  0.00593459  0.00170338 -0.00861312  0.07471289  0.01321465
+  0.00964931]
+>>> camera pose gradient:  [-8.7533839e-02  1.6658084e-01 -3.9945760e+00  3.7180010e-02
+ -3.4685317e-02  4.9708419e-02  1.2601818e-03]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0035,  0.0059,  0.7018, -0.2432, -0.0345,  0.8886, -0.3984],
+       device='cuda:0', requires_grad=True)
+
+------------------77/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0035,  0.0059,  0.7018, -0.2432, -0.0345,  0.8886, -0.3984],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0035,  0.0059,  0.7018, -0.2432, -0.0345,  0.8886, -0.3984],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8757,  dist=0.8741
+depth loss:  tensor(125.1181, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.5856e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00353739  0.00594286  0.00176579 -0.0086021   0.07484058  0.01318151
+  0.00977036]
+>>> camera pose gradient:  [-0.06193135 -0.10267041  2.9711914   0.03944108  0.03084052  0.1639262
+  0.25064334]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0035,  0.0060,  0.7018, -0.2432, -0.0344,  0.8885, -0.3984],
+       device='cuda:0', requires_grad=True)
+
+------------------78/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0035,  0.0060,  0.7018, -0.2432, -0.0344,  0.8885, -0.3984],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0035,  0.0060,  0.7018, -0.2432, -0.0344,  0.8885, -0.3984],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8757,  dist=0.8741
+depth loss:  tensor(125.1227, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.2609e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00354157  0.00597537  0.00180054 -0.00860013  0.07494326  0.01310974
+  0.00983658]
+>>> camera pose gradient:  [-0.08577584 -0.20994705  5.6481404   0.01290453  0.05853078  0.1726305
+  0.28580645]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0061,  0.7018, -0.2432, -0.0344,  0.8884, -0.3984],
+       device='cuda:0', requires_grad=True)
+
+------------------79/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0061,  0.7018, -0.2432, -0.0344,  0.8884, -0.3984],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0061,  0.7018, -0.2432, -0.0344,  0.8884, -0.3984],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8743,  dist=0.8727
+depth loss:  tensor(126.4823, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.9139e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00357319  0.00605596  0.00179106 -0.00860097  0.07501233  0.01300097
+  0.00984734]
+>>> camera pose gradient:  [-0.12627938  0.04448391 -1.0135291   0.00543498 -0.00575764  0.05445411
+  0.03443614]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0036,  0.0061,  0.7018, -0.2432, -0.0343,  0.8883, -0.3984],
+       device='cuda:0', requires_grad=True)
+
+------------------80/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0036,  0.0061,  0.7018, -0.2432, -0.0343,  0.8883, -0.3984],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0036,  0.0061,  0.7018, -0.2432, -0.0343,  0.8883, -0.3984],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8720,  dist=0.8704
+depth loss:  tensor(128.7658, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.5765e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00364274  0.00611768  0.00178987 -0.00860281  0.07507686  0.01288903
+  0.00985113]
+>>> camera pose gradient:  [-0.04836164  0.12004457 -2.1456008   0.09738776 -0.09144393  0.00756865
+ -0.11678448]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0037,  0.0061,  0.7018, -0.2432, -0.0342,  0.8882, -0.3983],
+       device='cuda:0', requires_grad=True)
+
+------------------81/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0037,  0.0061,  0.7018, -0.2432, -0.0342,  0.8882, -0.3983],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0037,  0.0061,  0.7018, -0.2432, -0.0342,  0.8882, -0.3983],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8716,  dist=0.8700
+depth loss:  tensor(129.2055, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.2604e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00372114  0.00614389  0.00180429 -0.00862418  0.07517169  0.01278627
+  0.00987455]
+>>> camera pose gradient:  [-0.00179825  0.14510554 -1.4380565   0.14541188 -0.11167409  0.02167743
+ -0.11093013]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2432, -0.0341,  0.8881, -0.3983],
+       device='cuda:0', requires_grad=True)
+
+------------------82/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2432, -0.0341,  0.8881, -0.3983],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2432, -0.0341,  0.8881, -0.3983],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8707,  dist=0.8691
+depth loss:  tensor(130.1327, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.9608e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00379235  0.00613195  0.00182772 -0.00867288  0.07530197  0.0126881
+  0.0099147 ]
+>>> camera pose gradient:  [ 0.02977642  0.06786704  1.7343578   0.21497181 -0.12335684  0.0744033
+ -0.03296106]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2433, -0.0339,  0.8880, -0.3983],
+       device='cuda:0', requires_grad=True)
+
+------------------83/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2433, -0.0339,  0.8880, -0.3983],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2433, -0.0339,  0.8880, -0.3983],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8707,  dist=0.8691
+depth loss:  tensor(130.1333, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.6663e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00384679  0.00610455  0.00183624 -0.00876033  0.07546893  0.01258057
+  0.00995654]
+>>> camera pose gradient:  [ 0.05154229 -0.1598069   6.7583094   0.08899464 -0.05716894  0.05186574
+ -0.01003293]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2434, -0.0337,  0.8879, -0.3982],
+       device='cuda:0', requires_grad=True)
+
+------------------84/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2434, -0.0337,  0.8879, -0.3982],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2434, -0.0337,  0.8879, -0.3982],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8703,  dist=0.8686
+depth loss:  tensor(130.5622, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.3815e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00387901  0.0061191   0.00179487 -0.00885718  0.07564235  0.01247036
+  0.00999594]
+>>> camera pose gradient:  [ 8.8089190e-02  1.1356175e-03  1.8109423e+00  2.0535438e-01
+ -9.8855004e-02  1.2004386e-01  7.6274484e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2436, -0.0335,  0.8878, -0.3982],
+       device='cuda:0', requires_grad=True)
+
+------------------85/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2436, -0.0335,  0.8878, -0.3982],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2436, -0.0335,  0.8878, -0.3982],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8703,  dist=0.8686
+depth loss:  tensor(130.5677, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.0931e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00387926  0.00613193  0.00174445 -0.00898613  0.07583841  0.01234019
+  0.01001832]
+>>> camera pose gradient:  [ 0.14297068  0.25653255 -4.5788746   0.2666924  -0.18205033  0.05323454
+ -0.10130133]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7017, -0.2437, -0.0333,  0.8876, -0.3982],
+       device='cuda:0', requires_grad=True)
+
+------------------86/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7017, -0.2437, -0.0333,  0.8876, -0.3982],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7017, -0.2437, -0.0333,  0.8876, -0.3982],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8707,  dist=0.8691
+depth loss:  tensor(130.1225, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.8169e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00383272  0.00608037  0.00173229 -0.00915653  0.07608844  0.01220924
+  0.01005593]
+>>> camera pose gradient:  [ 2.99125165e-02  1.11493438e-01 -1.09783936e+00  1.04983039e-01
+ -1.01234965e-01  1.04207441e-03 -1.23682924e-01]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2439, -0.0330,  0.8875, -0.3981],
+       device='cuda:0', requires_grad=True)
+
+------------------87/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2439, -0.0330,  0.8875, -0.3981],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2439, -0.0330,  0.8875, -0.3981],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8735,  dist=0.8718
+depth loss:  tensor(127.3480, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.5619e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00378101  0.00600647  0.00172937 -0.00933139  0.07635456  0.01209098
+  0.01011115]
+>>> camera pose gradient:  [-0.04434212 -0.078343    0.9925038  -0.0160093  -0.00403107  0.02142504
+ -0.0104148 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0037,  0.0060,  0.7017, -0.2441, -0.0328,  0.8874, -0.3981],
+       device='cuda:0', requires_grad=True)
+
+------------------88/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0037,  0.0060,  0.7017, -0.2441, -0.0328,  0.8874, -0.3981],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0037,  0.0060,  0.7017, -0.2441, -0.0328,  0.8874, -0.3981],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8744,  dist=0.8728
+depth loss:  tensor(126.4214, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.3212e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00374895  0.0059592   0.00171947 -0.00948568  0.07659593  0.01197892
+  0.01016268]
+>>> camera pose gradient:  [-0.11221151 -0.09168465  0.83059335 -0.17624158  0.06123102 -0.04844783
+ -0.07148436]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0059,  0.7017, -0.2442, -0.0326,  0.8873, -0.3980],
+       device='cuda:0', requires_grad=True)
+
+------------------89/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0059,  0.7017, -0.2442, -0.0326,  0.8873, -0.3980],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0059,  0.7017, -0.2442, -0.0326,  0.8873, -0.3980],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8749,  dist=0.8733
+depth loss:  tensor(125.9323, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.1056e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00375687  0.00593925  0.00170451 -0.00958873  0.07678861  0.01189047
+  0.01022145]
+>>> camera pose gradient:  [-0.08903671 -0.11246538  1.8960984  -0.17181394  0.05028198 -0.06059816
+ -0.09862649]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0059,  0.7017, -0.2442, -0.0324,  0.8873, -0.3979],
+       device='cuda:0', requires_grad=True)
+
+------------------90/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0059,  0.7017, -0.2442, -0.0324,  0.8873, -0.3979],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0059,  0.7017, -0.2442, -0.0324,  0.8873, -0.3979],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8739,  dist=0.8724
+depth loss:  tensor(126.8491, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.9143e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00379325  0.00594905  0.00167716 -0.00964651  0.07694185  0.01182646
+  0.01029146]
+>>> camera pose gradient:  [-0.16154106  0.03524987 -3.024386   -0.2803629   0.06323272 -0.1544533
+ -0.24075708]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0059,  0.7017, -0.2442, -0.0323,  0.8872, -0.3978],
+       device='cuda:0', requires_grad=True)
+
+------------------91/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0059,  0.7017, -0.2442, -0.0323,  0.8872, -0.3978],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0059,  0.7017, -0.2442, -0.0323,  0.8872, -0.3978],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2693, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.7600e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00387911  0.00594916  0.00167465 -0.00964126  0.07705426  0.01180875
+  0.01039621]
+>>> camera pose gradient:  [-0.03564599 -0.01988413 -0.65500104 -0.12204488  0.00735501 -0.07271993
+ -0.149893  ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0322,  0.8872, -0.3977],
+       device='cuda:0', requires_grad=True)
+
+------------------92/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0322,  0.8872, -0.3977],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0322,  0.8872, -0.3977],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8694,  dist=0.8678
+depth loss:  tensor(131.4044, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.6246e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0039682   0.00595418  0.00167716 -0.00961158  0.07715257  0.01181167
+  0.01051658]
+>>> camera pose gradient:  [ 0.08431531 -0.04836246  1.580148    0.01931382 -0.02641641  0.03856822
+  0.01540803]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0321,  0.8872, -0.3976],
+       device='cuda:0', requires_grad=True)
+
+------------------93/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0321,  0.8872, -0.3976],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0321,  0.8872, -0.3976],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8690,  dist=0.8674
+depth loss:  tensor(131.8375, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.4878e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00402068  0.00597068  0.00166786 -0.00958879  0.07725184  0.01180428
+  0.01062235]
+>>> camera pose gradient:  [ 0.21803476  0.0599233  -1.8757489   0.22095309 -0.09997293  0.14202248
+  0.12955049]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0320,  0.8872, -0.3975],
+       device='cuda:0', requires_grad=True)
+
+------------------94/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0320,  0.8872, -0.3975],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0060,  0.7017, -0.2442, -0.0320,  0.8872, -0.3975],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8690,  dist=0.8673
+depth loss:  tensor(131.8424, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.3342e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00399609  0.00597069  0.00167322 -0.00961354  0.07738192  0.01176077
+  0.01069513]
+>>> camera pose gradient:  [ 0.08261476  0.02596592 -0.44815326  0.12115496 -0.04977482  0.10787744
+  0.11190759]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2442, -0.0319,  0.8871, -0.3975],
+       device='cuda:0', requires_grad=True)
+
+------------------95/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2442, -0.0319,  0.8871, -0.3975],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2442, -0.0319,  0.8871, -0.3975],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8707,  dist=0.8691
+depth loss:  tensor(130.1187, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.1727e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00394667  0.00596426  0.00168139 -0.00966069  0.07751936  0.01169354
+  0.01074123]
+>>> camera pose gradient:  [ 0.0652898  -0.02448327  1.3164811   0.01066395 -0.01783724  0.03776687
+  0.02216519]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2443, -0.0317,  0.8870, -0.3974],
+       device='cuda:0', requires_grad=True)
+
+------------------96/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2443, -0.0317,  0.8870, -0.3974],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2443, -0.0317,  0.8870, -0.3974],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2779, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.0155e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00388059  0.00596454  0.00167906 -0.00970536  0.07765043  0.01162314
+  0.01077893]
+>>> camera pose gradient:  [-5.2864641e-02 -3.8512811e-02 -8.0898798e-01 -8.3830662e-02
+  3.0108849e-02  2.6082364e-03 -6.2937662e-04]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0316,  0.8870, -0.3974],
+       device='cuda:0', requires_grad=True)
+
+------------------97/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0316,  0.8870, -0.3974],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0316,  0.8870, -0.3974],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8735,  dist=0.8718
+depth loss:  tensor(127.3510, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.8676e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00383853  0.00597438  0.00168288 -0.00972837  0.07775624  0.01155907
+  0.010813  ]
+>>> camera pose gradient:  [-0.06957728 -0.02596908 -1.6832066  -0.09956447  0.04538677  0.0109332
+  0.0278077 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0315,  0.8869, -0.3974],
+       device='cuda:0', requires_grad=True)
+
+------------------98/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0315,  0.8869, -0.3974],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0315,  0.8869, -0.3974],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8735,  dist=0.8718
+depth loss:  tensor(127.3515, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.7271e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00382367  0.0059897   0.00169873 -0.00972861  0.07783306  0.01149845
+  0.01083884]
+>>> camera pose gradient:  [-0.10207836 -0.01831777 -1.6856997  -0.11896595  0.04861285 -0.00446851
+  0.00646333]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0315,  0.8869, -0.3974],
+       device='cuda:0', requires_grad=True)
+
+------------------99/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0315,  0.8869, -0.3974],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0060,  0.7017, -0.2443, -0.0315,  0.8869, -0.3974],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8735,  dist=0.8718
+depth loss:  tensor(127.3592, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.5959e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0038441   0.00600807  0.00172544 -0.00970432  0.07788239  0.01144505
+  0.01086098]
+>>> camera pose gradient:  [-1.2087673e-03 -1.3463783e-01  2.4503870e+00 -9.5911853e-02
+  4.0491991e-02  9.4706854e-03  2.5339257e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2442, -0.0315,  0.8868, -0.3973],
+       device='cuda:0', requires_grad=True)
+
+------------------100/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2442, -0.0315,  0.8868, -0.3973],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2442, -0.0315,  0.8868, -0.3973],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2682, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.4709e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00386291  0.00605821  0.0017314  -0.00966267  0.07791028  0.01139444
+  0.01087651]
+>>> camera pose gradient:  [ 4.1700900e-04  7.4946299e-02 -1.0506763e+00 -4.7600442e-03
+ -2.1446096e-02  8.1719263e-03 -2.7425945e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2442, -0.0314,  0.8868, -0.3973],
+       device='cuda:0', requires_grad=True)
+
+------------------101/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2442, -0.0314,  0.8868, -0.3973],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2442, -0.0314,  0.8868, -0.3973],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2696, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.3525e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00387972  0.00608467  0.00174457 -0.00962417  0.07794419  0.0113467
+  0.01089528]
+>>> camera pose gradient:  [-0.00480057  0.06905466 -0.93678    -0.02675704 -0.0058072   0.00971501
+ -0.01047939]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2442, -0.0314,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+
+------------------102/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2442, -0.0314,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2442, -0.0314,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2704, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.2401e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00389645  0.00609124  0.00176334 -0.00958395  0.07797711  0.01130116
+  0.01091403]
+>>> camera pose gradient:  [ 6.5619051e-03  1.7478257e-02  6.6380215e-01 -3.9094456e-02
+  7.0350681e-05  5.4727052e-03 -1.1643045e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2441, -0.0314,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+
+------------------103/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2441, -0.0314,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2441, -0.0314,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2688, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.1336e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390934  0.00609279  0.00177532 -0.00953963  0.07800674  0.01125872
+  0.01093295]
+>>> camera pose gradient:  [ 0.01052482 -0.01247044  1.9397275  -0.08645118  0.00220682 -0.04758439
+ -0.09997834]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2441, -0.0313,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+
+------------------104/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2441, -0.0313,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2441, -0.0313,  0.8867, -0.3973],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2694, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.0395e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391746  0.0060973   0.00177175 -0.00948182  0.07803254  0.01123297
+  0.01096755]
+>>> camera pose gradient:  [ 0.01978308  0.02450068  0.8741821  -0.04089656 -0.01729388 -0.0276498
+ -0.08090366]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2440, -0.0313,  0.8866, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------105/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2440, -0.0313,  0.8866, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2440, -0.0313,  0.8866, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2710, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.9539e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391817  0.00609523  0.00176203 -0.00942126  0.07806288  0.011217
+  0.01101294]
+>>> camera pose gradient:  [ 0.02623202  0.01648244  0.13008405 -0.01145694 -0.00898111  0.01703622
+  0.00106353]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2439, -0.0313,  0.8866, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------106/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2439, -0.0313,  0.8866, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2439, -0.0313,  0.8866, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2717, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.8704e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391006  0.00608923  0.00175232 -0.00936432  0.07809391  0.01119816
+  0.01105362]
+>>> camera pose gradient:  [ 0.02478611  0.03391238 -0.24715914  0.00967993 -0.01339714  0.03349034
+  0.02612839]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2439, -0.0313,  0.8866, -0.3971],
+       device='cuda:0', requires_grad=True)
+
+------------------107/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2439, -0.0313,  0.8866, -0.3971],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2439, -0.0313,  0.8866, -0.3971],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8715,  dist=0.8699
+depth loss:  tensor(129.2698, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.7871e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00389448  0.0060753   0.0017454  -0.00931504  0.07812738  0.01117235
+  0.01108569]
+>>> camera pose gradient:  [ 0.08266315 -0.07532796  0.26688367  0.01603835 -0.01940166  0.02611239
+  0.00721422]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2438, -0.0312,  0.8866, -0.3971],
+       device='cuda:0', requires_grad=True)
+
+------------------108/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2438, -0.0312,  0.8866, -0.3971],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2438, -0.0312,  0.8866, -0.3971],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8720,  dist=0.8704
+depth loss:  tensor(128.7850, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.7054e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00385281  0.00608169  0.00173718 -0.00927398  0.07816553  0.01114225
+  0.01111332]
+>>> camera pose gradient:  [-0.04118026  0.02206337 -0.9146918   0.01151003  0.00135397  0.05507029
+  0.07400533]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7017, -0.2438, -0.0312,  0.8865, -0.3971],
+       device='cuda:0', requires_grad=True)
+
+------------------109/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7017, -0.2438, -0.0312,  0.8865, -0.3971],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7017, -0.2438, -0.0312,  0.8865, -0.3971],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2928, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.6221e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00382905  0.0060819   0.00173658 -0.00923938  0.07819934  0.01110059
+  0.01112515]
+>>> camera pose gradient:  [-0.12550609  0.0596865  -2.3780148   0.01147967  0.01550413  0.07904706
+  0.12747703]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2438, -0.0312,  0.8865, -0.3971],
+       device='cuda:0', requires_grad=True)
+
+------------------110/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2438, -0.0312,  0.8865, -0.3971],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0038,  0.0061,  0.7018, -0.2438, -0.0312,  0.8865, -0.3971],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2863, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.5349e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00384968  0.00606705  0.00175381 -0.00921059  0.0782234   0.01104224
+  0.01111332]
+>>> camera pose gradient:  [-0.02852732 -0.03955722  0.42007786  0.01891889  0.01883085  0.08698153
+  0.14146133]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2438, -0.0311,  0.8864, -0.3971],
+       device='cuda:0', requires_grad=True)
+
+------------------111/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2438, -0.0311,  0.8864, -0.3971],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2438, -0.0311,  0.8864, -0.3971],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2823, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.4445e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00387783  0.00606365  0.00176615 -0.00918859  0.07823729  0.01096672
+  0.01107767]
+>>> camera pose gradient:  [ 0.01480292 -0.03040496  1.9125776  -0.02009934  0.00458281  0.02365969
+  0.02635879]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2437, -0.0311,  0.8863, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------112/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2437, -0.0311,  0.8863, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2437, -0.0311,  0.8863, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8720,  dist=0.8704
+depth loss:  tensor(128.7710, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.3584e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00389823  0.00606826  0.00176299 -0.00916459  0.0782479   0.01089239
+  0.0110409 ]
+>>> camera pose gradient:  [ 0.02428793 -0.03874058  1.7820163  -0.03280083 -0.00327583 -0.00638122
+ -0.03111032]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2437, -0.0311,  0.8863, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------113/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2437, -0.0311,  0.8863, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2437, -0.0311,  0.8863, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8720,  dist=0.8704
+depth loss:  tensor(128.7736, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.2798e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390844  0.0060822   0.00174683 -0.00913611  0.07825882  0.01082712
+  0.01101327]
+>>> camera pose gradient:  [ 0.01161216  0.02661911  0.04608274 -0.03801252 -0.01281916 -0.02375657
+ -0.06483454]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2437, -0.0311,  0.8862, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------114/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2437, -0.0311,  0.8862, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2437, -0.0311,  0.8862, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8720,  dist=0.8704
+depth loss:  tensor(128.7741, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.2094e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391374  0.00608803  0.00173193 -0.00910251  0.07827397  0.01077461
+  0.01099986]
+>>> camera pose gradient:  [ 0.01422793  0.05568932 -0.75422794 -0.01748083 -0.02154366 -0.01899525
+ -0.06511031]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2436, -0.0311,  0.8862, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------115/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2436, -0.0311,  0.8862, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2436, -0.0311,  0.8862, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2792, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.1460e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391372  0.00607918  0.00172418 -0.00906858  0.07829657  0.01073235
+  0.01099932]
+>>> camera pose gradient:  [ 0.00810051  0.10119839 -1.9559437  -0.03282471 -0.02528751 -0.04399768
+ -0.11024804]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2436, -0.0311,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------116/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2436, -0.0311,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2436, -0.0311,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2749, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.0911e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391097  0.00604555  0.00173187 -0.00903113  0.07832743  0.01070595
+  0.01101843]
+>>> camera pose gradient:  [ 0.02809496 -0.05437537  0.9790938  -0.03396487  0.00435035  0.00246201
+ -0.00739146]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2436, -0.0310,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------117/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2436, -0.0310,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2436, -0.0310,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2798, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.0392e-05, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00389902  0.00602905  0.00173146 -0.00899027  0.07835342  0.01068151
+  0.01103693]
+>>> camera pose gradient:  [ 0.00132412 -0.07603483  0.5543026  -0.00914694  0.01602576  0.04446069
+  0.07097857]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2435, -0.0310,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------118/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2435, -0.0310,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2435, -0.0310,  0.8861, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2827, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.8632e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00388781  0.0060335   0.00172687 -0.00895154  0.07837017  0.01064765
+  0.01104099]
+>>> camera pose gradient:  [ 0.0048262  -0.06830949  0.6829696  -0.01365125  0.01440379  0.03712783
+  0.05834669]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2435, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------119/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2435, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2435, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8730,  dist=0.8714
+depth loss:  tensor(127.7959, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.3358e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00387607  0.00605488  0.00171763 -0.00891379  0.07837925  0.0106073
+  0.01103425]
+>>> camera pose gradient:  [-0.08430962  0.10248355 -2.7857203  -0.02738808  0.00574951  0.00305401
+ -0.00771155]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2434, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------120/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2434, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0060,  0.7017, -0.2434, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2810, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.8413e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00389403  0.00604805  0.00173026 -0.00887401  0.07838504  0.01057011
+  0.01102957]
+>>> camera pose gradient:  [-0.00887021 -0.04787537  0.4143054  -0.03266143  0.01451395  0.01566611
+  0.02379813]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2434, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------121/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2434, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2434, -0.0310,  0.8860, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8725,  dist=0.8709
+depth loss:  tensor(128.2817, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.3679e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391321  0.0060541   0.00173855 -0.00883131  0.07838419  0.01053244
+  0.01102111]
+>>> camera pose gradient:  [-0.00698344 -0.04099441  0.1445322  -0.04240019  0.00633929 -0.00854828
+ -0.02279494]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2434, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------122/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2434, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2434, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8720,  dist=0.8704
+depth loss:  tensor(128.7685, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.9330e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393285  0.00607001  0.00174493 -0.00878389  0.07838078  0.01050079
+  0.01101753]
+>>> camera pose gradient:  [ 0.03224517 -0.03650428  0.3118162  -0.04987909 -0.00159854 -0.02676989
+ -0.05746802]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2433, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------123/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2433, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2433, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8720,  dist=0.8704
+depth loss:  tensor(128.7753, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.5483e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393961  0.00609365  0.00174832 -0.00873065  0.07837837  0.01047945
+  0.01102459]
+>>> camera pose gradient:  [ 0.04046164  0.01330682 -0.6235095  -0.01023301 -0.02709588 -0.02596208
+ -0.0772673 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2433, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+
+------------------124/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2433, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2433, -0.0310,  0.8859, -0.3972],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8711,  dist=0.8695
+depth loss:  tensor(129.7019, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.2077e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393195  0.00611155  0.00175607 -0.00868052  0.07838755  0.01046717
+  0.01104477]
+>>> camera pose gradient:  [ 0.02855576  0.04574651 -0.51482296 -0.00789929 -0.03903254 -0.04350072
+ -0.11625507]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0310,  0.8859, -0.3971],
+       device='cuda:0', requires_grad=True)
+
+------------------125/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0310,  0.8859, -0.3971],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0310,  0.8859, -0.3971],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8711,  dist=0.8695
+depth loss:  tensor(129.7005, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.9188e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391534  0.00611598  0.00176692 -0.0086337   0.07841218  0.01046771
+  0.01108378]
+>>> camera pose gradient:  [-0.00975797  0.01497664  0.67917234 -0.04775684 -0.02251708 -0.06818708
+ -0.14766708]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0309,  0.8859, -0.3971],
+       device='cuda:0', requires_grad=True)
+
+------------------126/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0309,  0.8859, -0.3971],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0309,  0.8859, -0.3971],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8706,  dist=0.8690
+depth loss:  tensor(130.1824, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.6942e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0039037   0.00611613  0.00177157 -0.00858141  0.07844383  0.01048648
+  0.01114541]
+>>> camera pose gradient:  [-0.02507712  0.00779034  0.81717193 -0.04721468 -0.01932359 -0.06716683
+ -0.14557005]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0309,  0.8859, -0.3970],
+       device='cuda:0', requires_grad=True)
+
+------------------127/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0309,  0.8859, -0.3970],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0309,  0.8859, -0.3970],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8710,  dist=0.8694
+depth loss:  tensor(129.7526, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.5244e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390176  0.00611428  0.00176954 -0.00852431  0.07848045  0.01052141
+  0.01122707]
+>>> camera pose gradient:  [ 0.00414237  0.01655023  0.02021247  0.02744511 -0.02684831  0.00850837
+ -0.02153052]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0309,  0.8860, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------128/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0309,  0.8860, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0309,  0.8860, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8710,  dist=0.8695
+depth loss:  tensor(129.7499, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.3484e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00389859  0.00610836  0.00176758 -0.00847869  0.07852473  0.01055062
+  0.0113045 ]
+>>> camera pose gradient:  [-0.03441903 -0.02501532 -0.40447748  0.01952851  0.00880415  0.05917165
+  0.09398232]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0308,  0.8860, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------129/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0308,  0.8860, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0308,  0.8860, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8710,  dist=0.8694
+depth loss:  tensor(129.7553, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.1305e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390749  0.00610945  0.00176889 -0.00844172  0.07856092  0.01056099
+  0.01135734]
+>>> camera pose gradient:  [-0.00230543 -0.00977519  0.25874433  0.05434625 -0.01517484  0.05920934
+  0.07506724]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0308,  0.8860, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------130/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0308,  0.8860, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0308,  0.8860, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8710,  dist=0.8694
+depth loss:  tensor(129.7603, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.8769e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0039163   0.00611294  0.00176811 -0.00841996  0.07859991  0.01055443
+  0.01139143]
+>>> camera pose gradient:  [ 0.00668022 -0.00472043  0.26381075  0.10173512 -0.02690466  0.09796022
+  0.13400812]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0307,  0.8859, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------131/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0307,  0.8859, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0307,  0.8859, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8706,  dist=0.8690
+depth loss:  tensor(130.1974, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.5690e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00392195  0.00611731  0.00176537 -0.008422    0.0786464   0.01052213
+  0.01139799]
+>>> camera pose gradient:  [-0.02719569  0.02219228 -0.63906944  0.0843581  -0.02313036  0.08398677
+  0.1138017 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0307,  0.8859, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------132/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0307,  0.8859, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0307,  0.8859, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8711,  dist=0.8695
+depth loss:  tensor(129.7112, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.2272e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393635  0.00611552  0.00176781 -0.00844179  0.07869804  0.01047039
+  0.01138338]
+>>> camera pose gradient:  [ 0.0291537  -0.01024881  0.42739958  0.08947796 -0.02185122  0.09025165
+  0.1252758 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0306,  0.8858, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------133/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0306,  0.8858, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0306,  0.8858, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8711,  dist=0.8695
+depth loss:  tensor(129.7114, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.8553e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393933  0.00611656  0.00176674 -0.00847869  0.07875379  0.0103994
+  0.01134759]
+>>> camera pose gradient:  [ 0.04955191 -0.03592198  0.9623332   0.10551986 -0.02550199  0.10111171
+  0.14077319]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0306,  0.8857, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------134/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0306,  0.8857, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0306,  0.8857, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8702,  dist=0.8686
+depth loss:  tensor(130.6270, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.4556e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00392501  0.00612676  0.0017584  -0.00853443  0.0788148   0.01030815
+  0.01128992]
+>>> camera pose gradient:  [-0.01718961  0.0613299  -1.4407198  -0.02861916 -0.00998309 -0.01881977
+ -0.04501549]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0305,  0.8857, -0.3970],
+       device='cuda:0', requires_grad=True)
+
+------------------135/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0305,  0.8857, -0.3970],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0305,  0.8857, -0.3970],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8712,  dist=0.8695
+depth loss:  tensor(129.6465, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.1084e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391802  0.00612011  0.00176191 -0.00857854  0.07887401  0.01023102
+  0.01124611]
+>>> camera pose gradient:  [-0.05229856 -0.0055975   0.25856012 -0.11860631  0.01278908 -0.08956728
+ -0.14862832]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0305,  0.8856, -0.3970],
+       device='cuda:0', requires_grad=True)
+
+------------------136/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0305,  0.8856, -0.3970],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2432, -0.0305,  0.8856, -0.3970],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8716,  dist=0.8700
+depth loss:  tensor(129.2168, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.8450e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0039297   0.00611556  0.00176311 -0.00859293  0.07892191  0.01018578
+  0.01123357]
+>>> camera pose gradient:  [-0.04116452  0.01730099  0.5226629  -0.14605021  0.00919325 -0.12460139
+ -0.2090093 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2431, -0.0304,  0.8856, -0.3970],
+       device='cuda:0', requires_grad=True)
+
+------------------137/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2431, -0.0304,  0.8856, -0.3970],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2431, -0.0304,  0.8856, -0.3970],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8716,  dist=0.8700
+depth loss:  tensor(129.2164, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.6717e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00395439  0.00610699  0.00176018 -0.00857465  0.07896118  0.0101788
+  0.01126015]
+>>> camera pose gradient:  [ 0.04467013 -0.02097628  0.5570889   0.0365523  -0.023764    0.02412235
+  0.01390307]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2431, -0.0304,  0.8856, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------138/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2431, -0.0304,  0.8856, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2431, -0.0304,  0.8856, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8711,  dist=0.8695
+depth loss:  tensor(129.7035, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.4948e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00396124  0.0061047   0.00175327 -0.00856601  0.07900664  0.01016599
+  0.01128158]
+>>> camera pose gradient:  [ 0.05468641 -0.01233035  0.02374806  0.076502   -0.02661895  0.06437677
+  0.07993221]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2431, -0.0303,  0.8856, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------139/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2431, -0.0303,  0.8856, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2431, -0.0303,  0.8856, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8716,  dist=0.8700
+depth loss:  tensor(129.2164, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.2950e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00394856  0.00610584  0.00174689 -0.00857462  0.07905892  0.01013696
+  0.01128635]
+>>> camera pose gradient:  [ 0.04993937  0.01467003 -0.51140064  0.05790245 -0.02794733  0.03917181
+  0.0357339 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2432, -0.0303,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------140/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2432, -0.0303,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2432, -0.0303,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8716,  dist=0.8700
+depth loss:  tensor(129.2095, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.0905e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391989  0.00610305  0.00174505 -0.00859481  0.07911791  0.01010013
+  0.01128414]
+>>> camera pose gradient:  [-0.05161993 -0.0203248  -0.14264265 -0.11332879  0.00984559 -0.09742267
+ -0.16641326]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2432, -0.0302,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------141/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2432, -0.0302,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7017, -0.2432, -0.0302,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8716,  dist=0.8700
+depth loss:  tensor(129.2137, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.9504e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391191  0.00610582  0.00174451 -0.00858866  0.07916686  0.01009345
+  0.01131245]
+>>> camera pose gradient:  [-0.00513729 -0.12153967 -0.8759662  -0.08413203  0.01883568 -0.04410622
+ -0.06563574]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0302,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------142/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0302,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2431, -0.0302,  0.8855, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8702,  dist=0.8686
+depth loss:  tensor(130.6231, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.8389e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390649  0.00613994  0.00175077 -0.00856502  0.07920293  0.01009947
+  0.01134992]
+>>> camera pose gradient:  [-0.08628328  0.06540532 -2.0070472  -0.14051273  0.01371433 -0.10054617
+ -0.1563178 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2431, -0.0302,  0.8856, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------143/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2431, -0.0302,  0.8856, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2431, -0.0302,  0.8856, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8697,  dist=0.8681
+depth loss:  tensor(131.1147, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.7794e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393148  0.00615365  0.00177181 -0.0085135   0.07922956  0.01013231
+  0.01141217]
+>>> camera pose gradient:  [-0.00611357  0.07503144 -0.542292   -0.03309033 -0.03054657 -0.07087689
+ -0.15241855]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0301,  0.8856, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------144/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0301,  0.8856, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0301,  0.8856, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8701,  dist=0.8685
+depth loss:  tensor(130.6852, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.7520e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00395611  0.00614643  0.00179499 -0.00845994  0.07926662  0.01018125
+  0.0114961 ]
+>>> camera pose gradient:  [ 0.03372506 -0.08442198  3.7235732   0.01443172 -0.00555368  0.02559683
+  0.03196694]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0301,  0.8856, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------145/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0301,  0.8856, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0301,  0.8856, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8692,  dist=0.8676
+depth loss:  tensor(131.6026, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.7067e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0039666   0.00616196  0.00178713 -0.0084148   0.07930237  0.01021832
+  0.01156586]
+>>> camera pose gradient:  [ 0.06134918 -0.01904568  1.7548091   0.12148878 -0.0267312   0.1155939
+  0.16908422]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0300,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------146/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0300,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0300,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8692,  dist=0.8676
+depth loss:  tensor(131.5945, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.6030e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00395475  0.00618093  0.0017665  -0.00840037  0.07934602  0.01022011
+  0.01159778]
+>>> camera pose gradient:  [ 0.02757373  0.06270456 -1.3303277   0.0551976  -0.01956614  0.05666434
+  0.07790062]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0300,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------147/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0300,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0300,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8697,  dist=0.8681
+depth loss:  tensor(131.1123, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.4768e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393449  0.00618162  0.00175822 -0.00839929  0.07939374  0.01020622
+  0.01161227]
+>>> camera pose gradient:  [-0.04203919  0.12230345 -3.3265262   0.0548883  -0.01271771  0.06342268
+  0.09306294]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0299,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------148/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0299,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0299,  0.8856, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8701,  dist=0.8685
+depth loss:  tensor(130.6817, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.3301e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00393086  0.00615024  0.00177646 -0.00841019  0.07944217  0.01017636
+  0.01160827]
+>>> camera pose gradient:  [ 0.02953675  0.01700394  0.39991325  0.06829299 -0.00313629  0.09585967
+  0.15702699]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0299,  0.8855, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------149/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0299,  0.8855, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0299,  0.8855, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8711,  dist=0.8695
+depth loss:  tensor(129.7005, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.1528e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00391731  0.00611751  0.00178981 -0.00843479  0.07948717  0.01012313
+  0.01157585]
+>>> camera pose gradient:  [-0.00576656 -0.15530564  3.9146855   0.02476762  0.01935495  0.07914734
+  0.14525463]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0299,  0.8855, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------150/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0299,  0.8855, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0061,  0.7018, -0.2430, -0.0299,  0.8855, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8711,  dist=0.8695
+depth loss:  tensor(129.7005, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.9590e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00390711  0.00612875  0.00177145 -0.00846232  0.07951938  0.01005346
+  0.01151997]
+>>> camera pose gradient:  [ 0.02882583 -0.10329995  0.72592187 -0.01055789  0.00629843  0.01993733
+  0.03636402]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7017, -0.2431, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------151/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7017, -0.2431, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7017, -0.2431, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8698,  dist=0.8681
+depth loss:  tensor(131.0463, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.7778e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00388786  0.00616599  0.00174928 -0.00848484  0.07954568  0.00998521
+  0.01146293]
+>>> camera pose gradient:  [-0.19232967  0.16627526 -5.800119   -0.14204445  0.03917245 -0.06593372
+ -0.07652885]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------152/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0039,  0.0062,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8697,  dist=0.8681
+depth loss:  tensor(131.1061, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.6401e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0039377   0.00615585  0.00177437 -0.00847428  0.07955252  0.00994188
+  0.01142564]
+>>> camera pose gradient:  [-0.05617416  0.04440483 -0.07948008 -0.1255432   0.00887521 -0.10741878
+ -0.17638095]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------153/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8701,  dist=0.8685
+depth loss:  tensor(130.6882, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.5545e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00400225  0.00613504  0.00179762 -0.00843747  0.07955484  0.0099324
+  0.01142454]
+>>> camera pose gradient:  [ 0.02031781 -0.0767597   4.4164057  -0.02117971 -0.01145601 -0.02226933
+ -0.04844154]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------154/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7018, -0.2430, -0.0298,  0.8854, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8684,  dist=0.8668
+depth loss:  tensor(132.3944, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.4826e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00405329  0.0061365   0.00178415 -0.0083997   0.07956187  0.00993001
+  0.01143247]
+>>> camera pose gradient:  [ 0.08437455 -0.09378472  3.3669028   0.075942   -0.02773925  0.06283513
+  0.08349781]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7017, -0.2430, -0.0298,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------155/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7017, -0.2430, -0.0298,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7017, -0.2430, -0.0298,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8676,  dist=0.8659
+depth loss:  tensor(133.2551, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.3922e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00406971  0.00616253  0.00174582 -0.00838222  0.0795802   0.00991052
+  0.01142421]
+>>> camera pose gradient:  [ 3.5930276e-02  1.3016278e-01 -3.1288309e+00  8.2825199e-02
+ -5.7685472e-02  2.7235026e-02  2.4784461e-03]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7017, -0.2430, -0.0298,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------156/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7017, -0.2430, -0.0298,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7017, -0.2430, -0.0298,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8680,  dist=0.8664
+depth loss:  tensor(132.8279, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.3007e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0040719   0.00615164  0.00173569 -0.00838453  0.07962166  0.00988543
+  0.01141632]
+>>> camera pose gradient:  [ 0.00416227  0.03628854 -2.46742     0.0612312  -0.02255601  0.05508457
+  0.07559141]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2430, -0.0297,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------157/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2430, -0.0297,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2430, -0.0297,  0.8853, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8685,  dist=0.8668
+depth loss:  tensor(132.3390, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.1986e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00407241  0.00613225  0.00174582 -0.00839996  0.07966877  0.00984758
+  0.01139522]
+>>> camera pose gradient:  [ 0.07016017  0.00934884 -0.34220016  0.04695772 -0.03567459  0.02244195
+  0.01293751]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0297,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------158/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0297,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0297,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8693,  dist=0.8677
+depth loss:  tensor(131.4772, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.1000e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00404822  0.00611231  0.00175762 -0.00842413  0.07972667  0.00980729
+  0.01137382]
+>>> camera pose gradient:  [ 4.9532890e-02 -4.6848856e-02  1.7522609e+00 -8.9353364e-04
+ -2.1533430e-02 -1.0950248e-02 -3.2852810e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0296,  0.8852, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------159/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0296,  0.8852, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0296,  0.8852, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8706,  dist=0.8690
+depth loss:  tensor(130.1771, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.0145e-06, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00400899  0.00610674  0.00175452 -0.00844571  0.07978817  0.00977403
+  0.01136062]
+>>> camera pose gradient:  [ 0.01620108 -0.04880914  1.6478841  -0.00571013 -0.01867982 -0.01057383
+ -0.02885762]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0295,  0.8852, -0.3969],
+       device='cuda:0', requires_grad=True)
+
+------------------160/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0295,  0.8852, -0.3969],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0295,  0.8852, -0.3969],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8706,  dist=0.8690
+depth loss:  tensor(130.1761, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.4022e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00396795  0.00611465  0.00173885 -0.0084639   0.07985169  0.00974697
+  0.01135409]
+>>> camera pose gradient:  [-0.07352838  0.03103067 -0.8880569  -0.08735421 -0.00999213 -0.10542171
+ -0.19067939]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0295,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------161/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0295,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0295,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8706,  dist=0.8690
+depth loss:  tensor(130.1807, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.0223e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00395689  0.00611355  0.00173169 -0.00846115  0.07991325  0.00975186
+  0.01138362]
+>>> camera pose gradient:  [-0.0835842   0.0715137  -2.7470584  -0.04693357 -0.00430413 -0.03739746
+ -0.06393933]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0294,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------162/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0294,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7017, -0.2430, -0.0294,  0.8852, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8706,  dist=0.8690
+depth loss:  tensor(130.1756, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.7593e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00397643  0.00609358  0.00174677 -0.00844838  0.07997058  0.00976664
+  0.0114221 ]
+>>> camera pose gradient:  [-0.05594456 -0.0139457   0.17689463 -0.06212768 -0.00638191 -0.06730867
+ -0.12107601]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0294,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------163/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0294,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0294,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8706,  dist=0.8690
+depth loss:  tensor(130.1814, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.6836e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00401378  0.0060793   0.00175899 -0.00842322  0.08002502  0.00979871
+  0.01147929]
+>>> camera pose gradient:  [ 4.1109920e-03 -8.0877334e-02  1.5127276e+00  3.6119495e-04
+ -9.9098748e-03  1.5146622e-03 -5.5122953e-03]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0293,  0.8853, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------164/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0293,  0.8853, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0061,  0.7018, -0.2430, -0.0293,  0.8853, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8693,  dist=0.8677
+depth loss:  tensor(131.4690, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.5839e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00404598  0.00608793  0.0017581  -0.00840065  0.08007838  0.00982714
+  0.01153183]
+>>> camera pose gradient:  [ 2.4191186e-02 -8.8748567e-02  1.3832953e+00  4.2467665e-02
+  1.3102088e-03  6.9224872e-02  1.1902449e-01]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2430, -0.0293,  0.8853, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------165/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2430, -0.0293,  0.8853, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2430, -0.0293,  0.8853, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8693,  dist=0.8677
+depth loss:  tensor(131.4853, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.2753e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00406643  0.00611934  0.00174642 -0.00838965  0.08012588  0.00983351
+  0.01155698]
+>>> camera pose gradient:  [-3.6569439e-02  2.8091490e-02 -1.4326574e+00 -3.3272072e-04
+  6.5181507e-03  3.2488745e-02  6.3048974e-02]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2429, -0.0292,  0.8853, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------166/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2429, -0.0292,  0.8853, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0061,  0.7017, -0.2429, -0.0292,  0.8853, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8689,  dist=0.8673
+depth loss:  tensor(131.9202, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.8831e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00409781  0.00614015  0.00174719 -0.00837967  0.08016583  0.00983018
+  0.01156789]
+>>> camera pose gradient:  [ 0.01235808  0.00727556 -1.1438047   0.07838939 -0.01481984  0.08300708
+  0.12937406]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0292,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------167/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0292,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0292,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8671,  dist=0.8655
+depth loss:  tensor(133.6880, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(7.3016e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00412169  0.00615696  0.00175691 -0.00838795  0.08020829  0.00980401
+  0.01155353]
+>>> camera pose gradient:  [ 0.0654545  -0.03215844  0.18341124  0.02765379 -0.02458407  0.01550255
+  0.01084274]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0291,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------168/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0291,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0291,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8667,  dist=0.8651
+depth loss:  tensor(134.1175, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.7364e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00411998  0.00618069  0.00176418 -0.00840153  0.08025731  0.00977612
+  0.01153857]
+>>> camera pose gradient:  [ 0.11526962  0.04455102 -0.60783625  0.06692094 -0.05031355  0.01675198
+ -0.0081964 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0291,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------169/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0291,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2430, -0.0291,  0.8852, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8676,  dist=0.8659
+depth loss:  tensor(133.2642, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(6.1865e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00407747  0.00619016  0.00177556 -0.00842853  0.08032351  0.00974625
+  0.01152661]
+>>> camera pose gradient:  [ 0.04542965  0.03188781  0.94681525  0.05263695 -0.04697713  0.0032098
+ -0.02957726]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0290,  0.8851, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------170/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0290,  0.8851, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0290,  0.8851, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8688,  dist=0.8672
+depth loss:  tensor(131.9684, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.6905e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00402302  0.00619015  0.0017783  -0.0084645   0.08040375  0.00971848
+  0.0115214 ]
+>>> camera pose gradient:  [-0.0522972   0.01502784  0.7139393  -0.1145891   0.00264482 -0.10195028
+ -0.16508341]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0289,  0.8851, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------171/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0289,  0.8851, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0289,  0.8851, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8688,  dist=0.8672
+depth loss:  tensor(132.0258, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.4644e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00399259  0.00618613  0.00177515 -0.00847155  0.08047488  0.00972205
+  0.01154765]
+>>> camera pose gradient:  [-0.07779807 -0.06033298 -0.34167153 -0.20706809  0.05144173 -0.1265136
+ -0.16664535]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0289,  0.8852, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------172/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0289,  0.8852, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2430, -0.0289,  0.8852, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8688,  dist=0.8672
+depth loss:  tensor(132.0264, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.5121e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00399289  0.00619868  0.00177503 -0.00843202  0.08051636  0.00976074
+  0.01160261]
+>>> camera pose gradient:  [-0.13666354  0.03074157 -0.88076866 -0.17775264  0.0433276  -0.10780774
+ -0.14235055]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0288,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------173/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0288,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0288,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8679,  dist=0.8663
+depth loss:  tensor(132.8887, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.7736e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00404193  0.00620173  0.00178188 -0.00835697  0.08053467  0.00982589
+  0.01167887]
+>>> camera pose gradient:  [ 0.00896069  0.02789296  0.12854593  0.06347824 -0.02535746  0.04101238
+  0.04684418]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2429, -0.0288,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------174/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2429, -0.0288,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2429, -0.0288,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8680,  dist=0.8663
+depth loss:  tensor(132.8430, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.9011e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0040829   0.00619699  0.00178707 -0.00830346  0.08056233  0.00987303
+  0.01173875]
+>>> camera pose gradient:  [ 0.08476983  0.00371936  0.9297907   0.07307755 -0.0236113   0.06601816
+  0.09660683]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0288,  0.8853, -0.3964],
+       device='cuda:0', requires_grad=True)
+
+------------------175/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0288,  0.8853, -0.3964],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0288,  0.8853, -0.3964],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8680,  dist=0.8663
+depth loss:  tensor(132.8458, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.8463e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00408951  0.00619172  0.00178432 -0.0082715   0.08059765  0.00989693
+  0.01177451]
+>>> camera pose gradient:  [ 0.05719087 -0.01085339  0.2638368   0.14036131 -0.028331    0.12929426
+  0.19709344]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0287,  0.8853, -0.3964],
+       device='cuda:0', requires_grad=True)
+
+------------------176/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0287,  0.8853, -0.3964],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0287,  0.8853, -0.3964],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8684,  dist=0.8668
+depth loss:  tensor(132.4120, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(5.4874e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.004075    0.00618989  0.00177974 -0.00827393  0.08064198  0.00988203
+  0.01176956]
+>>> camera pose gradient:  [ 0.0492773   0.01989099 -0.39851892  0.12564299 -0.0331498   0.10323875
+  0.1485035 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0287,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------177/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0287,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0287,  0.8853, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8688,  dist=0.8672
+depth loss:  tensor(132.0280, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.9367e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00404428  0.00618289  0.00177878 -0.00830409  0.08069655  0.00983948
+  0.01173711]
+>>> camera pose gradient:  [ 0.02012765  0.02956919 -0.34450847  0.11730852 -0.0290276   0.09780051
+  0.14151625]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------178/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8697,  dist=0.8681
+depth loss:  tensor(131.1107, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(4.2613e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00400939  0.0061686   0.00178069 -0.00835741  0.08075854  0.00977355
+  0.01168114]
+>>> camera pose gradient:  [-0.10235209 -0.03784965  0.71497315 -0.14084834  0.04634876 -0.06162892
+ -0.06122391]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8852, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------179/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8852, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8852, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8697,  dist=0.8681
+depth loss:  tensor(131.1107, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.7867e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00401469  0.00616595  0.0017767  -0.00837402  0.08079389  0.00973159
+  0.01164228]
+>>> camera pose gradient:  [-0.076958   -0.04810424  0.71326566 -0.15228273  0.04482435 -0.07553068
+ -0.08473745]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------180/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2429, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8698,  dist=0.8681
+depth loss:  tensor(131.0555, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.4961e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00404711  0.00617656  0.0017674  -0.00835498  0.08080587  0.00971514
+  0.01162332]
+>>> camera pose gradient:  [-0.09174773  0.00569075 -0.34983706 -0.11432196  0.0331654  -0.05302393
+ -0.05667318]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2429, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------181/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2429, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2429, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8671,  dist=0.8655
+depth loss:  tensor(133.6946, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.3194e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00410931  0.00618458  0.00176179 -0.00831226  0.08080196  0.00971532
+  0.01161698]
+>>> camera pose gradient:  [ 0.02029689  0.06210202 -1.5972548   0.01909097 -0.01891998  0.00412186
+ -0.00694294]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------182/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8671,  dist=0.8655
+depth loss:  tensor(133.6954, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(3.1459e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00415804  0.00617499  0.00176954 -0.00827804  0.08080684  0.00971431
+  0.01161256]
+>>> camera pose gradient:  [ 0.0731531  -0.08067977  1.1103194   0.04414078 -0.02761454  0.02309893
+  0.02085351]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------183/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0286,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8662,  dist=0.8646
+depth loss:  tensor(134.6077, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.9472e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00417559  0.00618821  0.00176764 -0.00825711  0.0808235   0.00970685
+  0.01160464]
+>>> camera pose gradient:  [ 0.05488673 -0.07806425  0.5822473   0.01880519 -0.00491722  0.03587379
+  0.06342299]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0285,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------184/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0285,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0285,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8657,  dist=0.8641
+depth loss:  tensor(135.1036, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.7039e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00417159  0.00622131  0.00176126 -0.00824246  0.08084069  0.00968993
+  0.01158544]
+>>> camera pose gradient:  [ 0.04627059  0.04678911 -2.2044125   0.03537664 -0.04644076 -0.01302238
+ -0.05262245]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0285,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------185/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0285,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2428, -0.0285,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8657,  dist=0.8641
+depth loss:  tensor(135.1044, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.5080e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00415129  0.00623842  0.00177318 -0.00823721  0.08087686  0.00967842
+  0.01157817]
+>>> camera pose gradient:  [ 0.08107679  0.10694762 -1.6760279   0.01591313 -0.07065299 -0.07324057
+ -0.17315367]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0284,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------186/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0284,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0284,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8671,  dist=0.8655
+depth loss:  tensor(133.6976, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.4416e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00410369  0.00622476  0.00179744 -0.00823607  0.08094092  0.00968885
+  0.01160458]
+>>> camera pose gradient:  [ 0.00920693  0.01804876  1.7723044  -0.04745571 -0.02960373 -0.08505189
+ -0.16361958]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0284,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------187/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0284,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2428, -0.0284,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8675,  dist=0.8659
+depth loss:  tensor(133.3183, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.5044e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00405748  0.00620754  0.00180501 -0.00822435  0.08101185  0.00972253
+  0.01165956]
+>>> camera pose gradient:  [ 0.02289874 -0.07567415  3.4992118  -0.0707794   0.01141881 -0.04425154
+ -0.0613052 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2428, -0.0283,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------188/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2428, -0.0283,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2428, -0.0283,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8688,  dist=0.8672
+depth loss:  tensor(132.0281, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.6178e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00400756  0.00621264  0.00178367 -0.00819786  0.08107065  0.00976545
+  0.01172078]
+>>> camera pose gradient:  [-0.07718176  0.04564195 -1.6773034  -0.02696275  0.02495094  0.0286654
+  0.07355925]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0283,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------189/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0283,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0283,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8693,  dist=0.8677
+depth loss:  tensor(131.5383, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.6656e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00399056  0.00620479  0.00177795 -0.00816792  0.08111246  0.00979596
+  0.01176187]
+>>> camera pose gradient:  [-0.08701666  0.05571961 -1.6789222  -0.01733541  0.01778194  0.02647637
+  0.06325165]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3964],
+       device='cuda:0', requires_grad=True)
+
+------------------190/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3964],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3964],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8701,  dist=0.8685
+depth loss:  tensor(130.6806, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.6521e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00400683  0.00618251  0.00178635 -0.00813705  0.08114218  0.00981587
+  0.01178682]
+>>> camera pose gradient:  [-0.02984951 -0.02886653  0.9827908   0.05079096  0.01298571  0.09416566
+  0.17305498]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3964],
+       device='cuda:0', requires_grad=True)
+
+------------------191/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3964],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0040,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3964],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8697,  dist=0.8681
+depth loss:  tensor(131.1158, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.4842e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00403232  0.00617033  0.00178599 -0.0081207   0.08116314  0.00980687
+  0.01177618]
+>>> camera pose gradient:  [-0.03331599 -0.01249069  0.5848147   0.04489245  0.01374157  0.09130505
+  0.1703879 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------192/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8852, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8693,  dist=0.8676
+depth loss:  tensor(131.5440, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(2.1937e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.0040674   0.00616276  0.00178093 -0.00811611  0.08117586  0.00977266
+  0.01173395]
+>>> camera pose gradient:  [ 0.02674513 -0.03559213  0.58315706  0.04623442  0.00293514  0.07049667
+  0.12415629]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8851, -0.3965],
+       device='cuda:0', requires_grad=True)
+
+------------------193/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8851, -0.3965],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8851, -0.3965],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8689,  dist=0.8673
+depth loss:  tensor(131.9189, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.8458e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00408928  0.0061657   0.00177163 -0.00812244  0.081186    0.00972164
+  0.01167211]
+>>> camera pose gradient:  [ 0.01847092 -0.02355672 -0.07921073  0.01120576  0.00889164  0.0434031
+  0.08505612]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+
+------------------194/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8685,  dist=0.8668
+depth loss:  tensor(132.3477, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.4973e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00410225  0.00617479  0.00176388 -0.00813068  0.08119114  0.00966322
+  0.01160008]
+>>> camera pose gradient:  [ 0.00274682 -0.01674779 -0.07773194  0.01784855 -0.0031153   0.02656211
+  0.04467122]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------195/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8676,  dist=0.8660
+depth loss:  tensor(133.2047, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.1828e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00411294  0.00618758  0.00175756 -0.00814216  0.08119717  0.00960296
+  0.01152658]
+>>> camera pose gradient:  [-0.04579335  0.00213093 -1.5347087  -0.04184771  0.00554005 -0.02390538
+ -0.03159211]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------196/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8667,  dist=0.8651
+depth loss:  tensor(134.1181, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(9.4813e-08, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00413928  0.00619852  0.0017643  -0.00814299  0.08120012  0.00955552
+  0.01146644]
+>>> camera pose gradient:  /hri/localdisk/yjin/intro_ros_ws/intro_venv/lib/python3.8/site-packages/pytorch3d/io/obj_io.py:533: UserWarning: Mtl file does not exist: ./data/./textured_simple.obj.mtl
+  warnings.warn(f"Mtl file does not exist: {f}")
+[-0.00961    -0.03582296 -0.21337175 -0.082102   -0.00893907 -0.08636109
+ -0.1448789 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------197/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8658,  dist=0.8641
+depth loss:  tensor(135.0367, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.2950e-08, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00416653  0.00621822  0.00177211 -0.0081251   0.0812068   0.00953764
+  0.01144016]
+>>> camera pose gradient:  [ 0.05666921 -0.02889598  0.7164417  -0.08964677 -0.01316766 -0.09825812
+ -0.16628818]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+
+------------------198/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0062,  0.7018, -0.2427, -0.0282,  0.8850, -0.3968],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8653,  dist=0.8637
+depth loss:  tensor(135.5296, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.0902e-08, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00417034  0.00624392  0.0017733  -0.00808859  0.08121875  0.0095498
+  0.01144853]
+>>> camera pose gradient:  [ 0.06056121  0.05874017  0.04261185 -0.02225065 -0.0593303  -0.10500433
+ -0.2192562 ]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0042,  0.0063,  0.7018, -0.2426, -0.0281,  0.8850, -0.3967],
+       device='cuda:0', requires_grad=True)
+
+------------------199/200------------------- 
+>>> camera pose before  :  Parameter containing:
+tensor([ 0.0042,  0.0063,  0.7018, -0.2426, -0.0281,  0.8850, -0.3967],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0042,  0.0063,  0.7018, -0.2426, -0.0281,  0.8850, -0.3967],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8653,  dist=0.8637
+depth loss:  tensor(135.5294, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(8.8463e-08, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00415161  0.00625089  0.00177407 -0.00805064  0.0812563   0.00959104
+  0.01149836]
+>>> camera pose gradient:  [ 0.01226815  0.08622314 -0.74824196 -0.0391147  -0.04397815 -0.09992281
+ -0.19887236]
+>>> camera pose after   :  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2426, -0.0281,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+normalized quat:  Parameter containing:
+tensor([ 0.0041,  0.0062,  0.7018, -0.2426, -0.0281,  0.8851, -0.3966],
+       device='cuda:0', requires_grad=True)
+confidence, iou = 0.8653,  dist=0.8637
+depth loss:  tensor(135.5186, device='cuda:0', grad_fn=<AddBackward0>) 	quat regularization loss:  tensor(1.0506e-07, device='cuda:0', grad_fn=<PowBackward0>) 	pos loss:  [ 0.00413023  0.0062334   0.00178087 -0.00800753  0.08131001  0.00965703
+  0.01158166]
