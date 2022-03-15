@@ -28,7 +28,8 @@ else:
     print("WARNING: CPU only, this will be slow!")
 
 # Load the dolphin mesh.
-trg_obj = os.path.join('./data/cow_mesh', 'cow.obj')
+#trg_obj = os.path.join('./data/cow_mesh', 'cow.obj')
+trg_obj = os.path.join('./data', 'textured_simple.obj')
 
 # We read the target 3D model using load_obj
 verts, faces, aux = load_obj(trg_obj)

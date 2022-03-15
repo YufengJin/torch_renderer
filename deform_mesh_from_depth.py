@@ -47,12 +47,12 @@ else:
     device = torch.device("cpu")
 
 # Set paths
-# object_id = 6
-DATA_DIR = "./data"
-# DATA_DIR = "/hri/localdisk/yjin/intro_ros_ws/src/intro_object_models/models/ycb-video"
+object_id = 6
+#DATA_DIR = "./data"
+DATA_DIR = "/hri/localdisk/yjin/intro_ros_ws/src/intro_object_models/models/ycb-video"
 
-# obj_filename = os.path.join(DATA_DIR, "%3d/textured_simple.obj"%object_id)
-obj_filename = os.path.join(DATA_DIR, "cow_mesh/cow.obj")
+obj_filename = os.path.join(DATA_DIR, "%03d/textured_simple.obj"%object_id)
+#obj_filename = os.path.join(DATA_DIR, "cow_mesh/cow.obj")
 
 # Load obj file
 mesh = load_objs_as_meshes([obj_filename], device=device)
@@ -70,7 +70,7 @@ mesh.scale_verts_((1.0 / float(scale)))
 
 
 # the number of different viewpoints from which we want to render the mesh.
-num_views = 20
+num_views = 10
 
 # Get a batch of viewing angles.
 elev = torch.linspace(0, 360, num_views)
@@ -359,7 +359,7 @@ final_verts, final_faces = new_src_mesh.get_mesh_verts_faces(0)
 final_verts = final_verts * scale + center
 
 # Store the predicted mesh using save_obj
-final_obj = os.path.join("./morphy_results", "model1.ply")
+final_obj = os.path.join("./morphy_results", "final_from_depth.ply")
 # save_obj(final_obj, final_verts, final_faces)
 IO().save_mesh(new_src_mesh, final_obj, binary=False, colors_as_uint8=True)
 

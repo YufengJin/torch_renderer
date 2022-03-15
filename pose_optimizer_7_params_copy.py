@@ -206,11 +206,11 @@ class Model(nn.Module):
         #union_mask = torch.sigmoid(amp*(depths+self.image_ref))
         union_mask = torch.tanh(amp*(depths+self.image_ref+1.))
         
-        if False:
-            plt.subplot(2,2,1); plt.imshow(inter_mask[0].detach().cpu().numpy())
-            plt.subplot(2,2,2); plt.imshow(union_mask[0].detach().cpu().numpy())
-            plt.subplot(2,2,3); plt.imshow(depths[0].detach().cpu().numpy())
-            plt.subplot(2,2,4); plt.imshow(self.image_ref[0].detach().cpu().numpy())
+        if True:
+            plt.subplot(2,2,1); plt.imshow(inter_mask[0].detach().cpu().numpy()); plt.title("intersect mask")
+            plt.subplot(2,2,2); plt.imshow(union_mask[0].detach().cpu().numpy()); plt.title("union mask")
+            plt.subplot(2,2,3); plt.imshow(depths[0].detach().cpu().numpy()); plt.title("rendered depth")
+            plt.subplot(2,2,4); plt.imshow(self.image_ref[0].detach().cpu().numpy()); plt.title("ref depth")
             plt.show()
 
         if inter_mask.sum() == 0.:
