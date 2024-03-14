@@ -38,6 +38,8 @@ from pytorch3d.renderer import (
     BlendParams,
 
 )
+
+from PIL import Image
 # track the gradient nan error
 #torch.autograd.set_detect_anomaly(True)
 # Set the cuda device 
@@ -73,7 +75,7 @@ blend_params = BlendParams(sigma=1e-4, gamma=1e-4)
 # the faster coarse-to-fine rasterization method is used. Refer to rasterize_meshes.py for 
 # explanations of these parameters. Refer to docs/notes/renderer.md for an explanation of 
 # the difference between naive and coarse-to-fine rasterization. 
-silhouette_raster_settings = RasterizationSettings(
+raster_settings = RasterizationSettings(
     image_size=256, 
     blur_radius=np.log(1. / 1e-4 - 1.) * blend_params.sigma, 
     faces_per_pixel=1, 
@@ -86,21 +88,47 @@ silhouette_raster_settings = RasterizationSettings(
 silhouette_renderer = MeshRenderer(
     rasterizer=MeshRasterizer(
         cameras=cameras, 
-        raster_settings=silhouette_raster_settings
+        raster_settings=raster_settings
     ),
-    #shader=SoftSilhouetteShader(blend_params=blend_params)
-    shader=SoftSilhouetteShader()
+    shader=SoftSilhouetteShader(blend_params=blend_params)
+)
+
+# decompose Meshrendrer into two parts
+rasterizer = MeshRasterizer(
+        cameras=cameras, 
+        raster_settings=raster_settings
 )
 
 
-# We will also create a Phong renderer. This is simpler and only needs to render one face per pixel.
+############################################## rasterizer 2 with 50 faces ###################################
+#raster_settings = RasterizationSettings(
+#    image_size=256,
+#    blur_radius=np.log(1. / 1e-4 - 1.) * blend_params.sigma,
+#    faces_per_pixel=150,
+#    # NOTE
+#    perspective_correct = False
+#)
+#
+#
+## decompose Meshrendrer into two parts
+#rasterizer2 = MeshRasterizer(
+#        cameras=cameras,
+#        raster_settings=raster_settings
+#)
+
+
+#############################################################################################################
+
+
+# color renderer
 raster_settings = RasterizationSettings(
     image_size=256, 
     blur_radius=0.0, 
     faces_per_pixel=1, 
 )
+
 # We can add a point light in front of the object. 
-lights = PointLights(device=device, location=((2.0, 2.0, -2.0),))
+lights = PointLights(device=device, location=((2.0, -2.0, 2.0),))
 phong_renderer = MeshRenderer(
     rasterizer=MeshRasterizer(
         cameras=cameras, 
@@ -110,48 +138,38 @@ phong_renderer = MeshRenderer(
     shader=SoftPhongShader(device=device, cameras=cameras, lights=lights)
 )
 
-# decompose Meshrendrer into two parts
-rasterizer = MeshRasterizer(
-        cameras=cameras, 
-        raster_settings=silhouette_raster_settings
-    )
 
 
-PhongShader=SoftPhongShader(device=device, cameras=cameras, lights=lights)
 # Select the viewpoint using spherical angles  
 distance = 4.   # distance from camera to the object
-elevation = 50.0
-azimuth = 30.0  # No rotation so the camera is positioned on the +Z axis. 
+elevation = 0.0
+azimuth = 0.0  # No rotation so the camera is positioned on the +Z axis. 
 
 # Get the position of the camera based on the spherical angles
 R, T = look_at_view_transform(distance, elevation, azimuth, device=device)
 print('reference camera R, t:\n', R, T)
 
 # reference (T,quaternion) = [0.0000, -0.0000,  5.0000,  0.0000,  0.0000,  0.9063, -0.4226]
-quaternion_ref = torch.cat((T,matrix_to_quaternion(R)), axis = -1)
-print('reference quaternion: ', quaternion_ref)
+position_ref = torch.cat((T, matrix_to_quaternion(R)), axis = -1).squeeze()
+print('reference quaternion: ', position_ref)
 
 fragments = rasterizer(mesh, R=R, T=T)
-
+# NOTE faces per pixels not effect significat on fragments.zbuf if use mean of all faces
 silhouette = fragments.zbuf.mean(-1)
+
 image_ref = phong_renderer(mesh, R=R, T=T)
 
 # plot the colored and silhouette images test
 silhouette_ref = silhouette.cpu().numpy()
 image_ref = image_ref.cpu().numpy()
 
-# refill the background with 0
-silhouette_ref[silhouette_ref == -1] = 0.
 
-if False:
+
+if True:
 
     plt.figure(figsize=(10, 10))
-    plt.subplot(1, 2, 1)
-    plt.imshow(silhouette_ref.squeeze())  # only plot the alpha channel of the RGBA image
-    plt.grid(False)
-    plt.subplot(1, 2, 2)
-    plt.imshow(image_ref.squeeze()[..., :3])
-    plt.grid(False)
+    plt.subplot(1,2,1); plt.imshow(silhouette_ref.squeeze()) ; plt.colorbar() ; plt.grid(False)# only plot the alpha channel of the RGBA image
+    plt.subplot(1,2,2); plt.imshow(image_ref.squeeze()) ; plt.grid(False)
     plt.show()
 
 
@@ -163,44 +181,46 @@ class Model(nn.Module):
         self.renderer = renderer
         
         # delta for calculate gradient of quaternion and tranlaion 
-        delta = np.repeat([0.01, 0.01], [4,4])
+        #delta = np.repeat([0.001, 0.001], [4,4])
       
         # 8 by 7 matrix with zeros on first rows
-        delta_mat = np.diag(delta)[:, 1:]
+        #delta_mat = np.diag(delta)[:, 1:]
 
-        self.delta_mat = torch.from_numpy(delta_mat.astype(np.float32)).to(self.device)
+        #self.delta_mat = torch.from_numpy(delta_mat.astype(np.float32)).to(self.device)
         # Get the silhouette of the reference RGB image by finding all non-white pixel values. 
-        # TODO render true depth 
+        # render true depth 
         image_ref = torch.from_numpy(image_ref).to(meshes.device)
 
         self.register_buffer('images_ref', image_ref)
         
         # Create an optimizable parameter for the x, y, z position of the camera. 
-        #self.camera_position   = nn.Parameter(torch.from_numpy(np.array([0.0400, 0.010,  3.7000,  -0.1,  0.1, .9063, -0.426], dtype=np.float32)).to(meshes.device))
-        self.camera_position   = nn.Parameter(torch.from_numpy(np.array([0.0400, 0.010,  3.7000], dtype=np.float32)).to(meshes.device))
-        self.camera_quaternion = nn.Parameter(torch.from_numpy(np.array([-0.1,  0.1, .9063, -0.426], dtype=np.float32)).to(meshes.device))
+        self.camera_position   = nn.Parameter(torch.from_numpy(np.array([0.0400, 0.010,  3.7000,  -0.1,  0.1, .9063, -0.426], dtype=np.float32)).to(meshes.device))
 
     def forward(self):
         # Render the image using the updated camera position. Based on the new position of the 
         
         # quaternion normalization 
-        quat = self.camera_quaternion.clone()
+        quat = self.camera_position[3:].clone()
         #quat = self.camera_rotation.clone()
-        normalized_quat = quat/(((quat**2).sum())**0.5)
+        normalized_quat = (quat/(((quat**2).sum())**0.5)).detach()
 
         R = quaternion_to_matrix(normalized_quat[None, :])
-        T = self.camera_position[None,:]
+        T = self.camera_position[None,:3]
 
         #elevation, azimuth, distance = self.camera_position
         #R, T = look_at_view_transform(distance, elevation, azimuth, device=device)
 
         #print('rendering 1 meshes, checking shape of R,t, and lens of meshes', R.shape, T.shape,len(self.meshes))
         fragments = self.renderer(self.meshes.clone(), R=R, T=T)
-        depths = fragments.zbuf.mean(-1)
+        depth = fragments.zbuf.mean(-1)
         # NOTE regularization 1e5 before
-        loss = self._calc_depth_confidence(depths)[0] #+ 1*(((quat**2).sum()-1)**2) 
+        loss_depth = self._calc_depth_confidence(depth)[0]
+
+        #loss_depth = ((depth - self.images_ref)**2).mean()
+        loss = loss_depth + 1*(((quat**2).sum()-1)**2) 
          
-        return loss, depths 
+        #print("depth loss:  , quat loss: ", (loss_depth, ((quat**2).sum()-1)**2))
+        return loss, depth 
 
     def calc_gradient(self):
         with torch.no_grad():
@@ -229,7 +249,7 @@ class Model(nn.Module):
             #print('delta losses: ', delta_losses)
             return delta_losses.cpu().numpy() 
 
-    def _calc_depth_confidence2(self, depths, amp = 1e5, clip_tol = 0.05):
+    def _calc_depth_confidence(self, depths, amp = 1e5, clip_tol = 0.5):
         # mask intersection image
         #TODO  sigmoid and tahn? simoid(0) = 0.5, tanh(0)=0
         #inter_mask = torch.sigmoid(amp*depths*self.images_ref)
@@ -240,57 +260,23 @@ class Model(nn.Module):
             images_ref = self.images_ref.clone()
            
 
-        inter_mask = torch.tanh(amp*(depths+1.)*(images_ref))
+        inter_mask = torch.logical_and((depths+1.).detach(), (images_ref+1.))#, out=torch.empty(image_ref.shape, dtype=torch.float32, device=self.device))
+       
+      
+        #inter_mask = torch.tanh(amp*(depths+1.)*(images_ref))
 
         #union_mask = torch.sigmoid(amp*(depths+self.images_ref))
-        union_mask = torch.tanh(amp*(depths+images_ref+1.))
-        
+        #union_mask = torch.tanh(amp*(depths+images_ref+1.))
+        union_mask = torch.logical_or((depths+1.).detach(), (images_ref+1.)) #, out=torch.empty(image_ref.shape, dtype=torch.float32))
 
         # TODO if there is no intersection mask
         iou = inter_mask.sum((1,2))/union_mask.sum((1,2))
-        dist_clip  =  torch.clip(torch.abs(depths - images_ref), 0., clip_tol) 
-
-        dist_score = iou*(1-(dist_clip*inter_mask/clip_tol).mean((1,2)))
-        print('inter union mask shape: ', inter_mask.shape, union_mask.shape, '\tiou = {},  dist= {}'.format(iou, dist_score))
 
         
-        if False and depths.shape[0] == 1:
-            plt.figure(figsize=(12, 10))
-            plt.subplot(2,3,1); plt.imshow(inter_mask[0].detach().cpu().numpy()); plt.title("intersect")
-            plt.subplot(2,3,2); plt.imshow(union_mask[0].detach().cpu().numpy()); plt.title("union")
-            plt.subplot(2,3,3); plt.imshow(depths[0].detach().cpu().numpy()); plt.title('rendered depth'); plt.colorbar()
-            plt.subplot(2,3,4); plt.imshow(images_ref[0].detach().cpu().numpy()) ; plt.title('gt depth'); plt.colorbar()
-            plt.subplot(2,3,5); plt.imshow((depths-images_ref)[0].detach().cpu().numpy()); plt.title('Diff depth'); plt.colorbar()
-            plt.subplot(2,3,6); plt.imshow((dist_clip*inter_mask)[0].detach().cpu().numpy()); plt.title('intersect depth'); plt.colorbar()
-            plt.suptitle("depth confidence")
-            plt.show()
-
-
-        #print("DEBUG: iou, ", iou, " , dist_core, ", dist_score)
-        return (1-iou).sum(), (1-iou)
-
-    def _calc_depth_confidence(self, depths, amp = 1e5, clip_tol = 0.05):
-        # mask intersection image
-        #TODO  sigmoid and tahn? simoid(0) = 0.5, tanh(0)=0
-        #inter_mask = torch.sigmoid(amp*depths*self.images_ref)
-
-        if depths.shape[0] != 1:
-            images_ref = self.images_ref.repeat(depths.shape[0],1,1)
-        else:
-            images_ref = self.images_ref.clone()
-           
-
-        inter_mask = torch.tanh(amp*(depths+1.)*(images_ref))
-
-        #union_mask = torch.sigmoid(amp*(depths+self.images_ref))
-        union_mask = torch.tanh(amp*(depths+images_ref+1.))
-        
-
-        # TODO if there is no intersection mask
-        iou = inter_mask.sum((1,2))/union_mask.sum((1,2))
         dist_clip  =  torch.clip(torch.abs(depths - images_ref), 0., clip_tol) 
-
-        dist_score = iou*(1-(dist_clip*inter_mask/clip_tol).mean((1,2)))
+        
+        #dist_score = iou*(1-(dist_clip[inter_mask]/clip_tol).mean())
+        dist_score = (1-(dist_clip[inter_mask]/clip_tol).mean())
         #print('inter union mask shape: ', inter_mask.shape, union_mask.shape, '\tiou = {},  dist= {}'.format(iou, dist_score))
 
         
@@ -301,20 +287,21 @@ class Model(nn.Module):
             plt.subplot(2,3,3); plt.imshow(depths[0].detach().cpu().numpy()); plt.title('rendered depth'); plt.colorbar()
             plt.subplot(2,3,4); plt.imshow(images_ref[0].detach().cpu().numpy()) ; plt.title('gt depth'); plt.colorbar()
             plt.subplot(2,3,5); plt.imshow((depths-images_ref)[0].detach().cpu().numpy()); plt.title('Diff depth'); plt.colorbar()
-            plt.subplot(2,3,6); plt.imshow((dist_clip*inter_mask)[0].detach().cpu().numpy()); plt.title('intersect depth'); plt.colorbar()
+            #plt.subplot(2,3,6); plt.imshow((dist_clip*inter_mask)[0].detach().cpu().numpy()); plt.title('intersect depth'); plt.colorbar()
             plt.suptitle("depth confidence")
             plt.show()
 
 
-        #print("DEBUG: iou, ", iou, " , dist_core, ", dist_score)
-        return (1-(iou+dist_score)/2).sum(), 1-(iou+dist_score)/2
+        print("DEBUG: iou, ", 1-iou, " , dist_core, ", 1-dist_score)
+        #return (1-dist_score).sum(), (1-dist_score)
+        return (dist_score).sum(), 1-(iou+dist_score)/2
 # Initialize a model
 
 
 model = Model(meshes=mesh, renderer= rasterizer, image_ref=silhouette_ref).to(device)
 # Create an optimizer. Here we are using Adam and we pass in the parameters of the model
-#optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
-optimizer = torch.optim.Adam(list(model.parameters()), lr=0.001)
+#optimizer = torch.optim.Adam([{'params': model.camera_position},{'params':model.camera_quaternion, 'lr':0.0001}], lr=0.00001)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 # visualize the starting postion and the reference position
 
@@ -337,7 +324,7 @@ if False:
 
 
 # optimiztion run
-Maxiters = 200
+Maxiters = 1000
 
 loss_hist = list()
 pose_hist = list()
@@ -351,9 +338,8 @@ def cosine_distance(x,y):
 for i in range(Maxiters):
     print('\n------------------%d/%d------------------- '%(i, Maxiters))
     optimizer.zero_grad()
-    #optimizer2.zero_grad()
-    #print('>>> camera pose before  : ', model.camera_position
-    pose_hist.append(np.concatenate([model.camera_position.detach().cpu().numpy(), model.camera_quaternion.detach().cpu().numpy()]))
+
+    #pose_hist.append(np.concatenate([model.camera_position.detach().cpu().numpy(), model.camera_quaternion.detach().cpu().numpy()]))
 
     loss, image = model()
     loss_hist.append(loss.detach().cpu().numpy()) 
@@ -361,14 +347,16 @@ for i in range(Maxiters):
     print("%d/%d loss: %.6f"%(i, Maxiters, loss.detach().cpu().numpy()))
     loss.backward()
 
-    grad_hist.append(np.concatenate([model.camera_position.grad.detach().cpu().numpy(), model.camera_quaternion.grad.detach().cpu().numpy()]))
+    #grad_hist.append(np.concatenate([model.camera_position.grad.detach().cpu().numpy(), model.camera_quaternion.grad.detach().cpu().numpy()]))
 
-    print('>>> camera pose cos distance: ', cosine_distance(model.camera_position.grad.detach().cpu().numpy(),  model.calc_gradient()[:3]))
-    print('>>> camera rot cos distance: ', cosine_distance(model.camera_quaternion.grad.detach().cpu().numpy(), model.calc_gradient()[3:]))
-    print('>>> camera all cos distance: ', cosine_distance(np.concatenate([model.camera_position.grad.detach().cpu().numpy(), model.camera_quaternion.grad.detach().cpu().numpy()]), model.calc_gradient()))
+    #print('>>> camera pose grad: ', model.camera_position.grad.detach().cpu().numpy())
+    #print('>>> camera rot grad: ', model.camera_quaternion.grad.detach().cpu().numpy())
+    #print('>>> camera pose grad(calc): ', model.calc_gradient()[:3])
+    #print('>>> camera rot grad (calc): ', model.calc_gradient()[3:])
+    #print('>>> camera pose cos distance: ', cosine_distance(model.camera_position.grad.detach().cpu().numpy(),  model.calc_gradient()[:3]))
+    #print('>>> camera rot cos distance: ', cosine_distance(model.camera_quaternion.grad.detach().cpu().numpy(), model.calc_gradient()[3:]))
+   # print('>>> camera all cos distance: ', cosine_distance(np.concatenate([model.camera_position.grad.detach().cpu().numpy(), model.camera_quaternion.grad.detach().cpu().numpy()]), model.calc_gradient()))
     optimizer.step()
-    #optimizer2.step()
-    #print('>>> camera pose after   : ', model.camera_position)
      
     if True and (i % 5 ==0):
         plt.clf() 
@@ -390,20 +378,20 @@ for i in range(Maxiters):
 
         plt.subplot(2, 3, 4)
         plt.plot(loss_hist)
-        plt.ylim((0,0.5))
+        plt.ylim((0,0.05))
         plt.title("Loss")
 
         plt.subplot(2,3,5)
         plt.plot(pose_hist, label=['x','y','z','qw','qx','qy','qz'])
-        #plt.legend()
+        plt.legend()
         plt.title("Poses")
         
         plt.subplot(2,3,6)
         plt.plot(grad_hist, label=['x','y','z','qw','qx','qy','qz'])
-        #plt.legend()
+        plt.legend()
         plt.title("Gradients")
 
-        plt.pause(0.01)
+        plt.pause(0.1)
         #plt.show()
         #plt.savefig('./results/iter_%d.png'%i, format = 'png', dpi=200)
     
