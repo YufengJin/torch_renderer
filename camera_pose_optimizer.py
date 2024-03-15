@@ -80,8 +80,7 @@ else:
     device = torch.device("cpu")
 
 # Load the obj and ignore the textures and materials.
-object_id = 6  
-object_p = f"/hri/storage/user/yjin/intro_ros_ws/src/intro_object_models/models/all_objects/{object_id:03d}/textured_simple.obj"
+object_p = "data/cow_mesh/cow.obj" 
 verts, faces_idx, _ = load_obj(object_p)
 #erts, faces_idx, _ = load_obj("./data/teapot.obj")
 faces = faces_idx.verts_idx
