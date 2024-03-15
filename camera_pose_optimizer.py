@@ -46,11 +46,14 @@ from pytorch3d.renderer import (
 colormap = plt.cm.viridis 
 norm = lambda X: (X-X.min())/(X.max()-X.min())
 
-PATCH_SIZE = (150, 150)  # Example patch size
+PATCH_SIZE = (200, 200)  # Example patch size
 
 import wandb
 # Initialize wandb with your project name
 wandb.init(project="depth-optimization")
+
+
+torch.autograd.set_detect_anomaly(True)
 
 def patch_image(image):
 
@@ -138,9 +141,9 @@ fragments = rasterizer=MeshRasterizer(
 
 
 # Select the viewpoint using spherical angles  
-distance = 0.5   # distance from camera to the object
-elevation = 50.0   # angle of elevation in degrees
-azimuth = 0.0  # No rotation so the camera is positioned on the +Z axis. 
+distance = 0.7   # distance from camera to the object
+elevation = 30.0   # angle of elevation in degrees
+azimuth = 60.0  # No rotation so the camera is positioned on the +Z axis. 
 
 # Get the position of the camera based on the spherical angles
 R, T = look_at_view_transform(distance, elevation, azimuth, device=device)
@@ -159,8 +162,6 @@ silhouette_ref = (silhouette_ref[...,3] != 0.).astype(np.uint8)
 
 depth_ref = depth_ref[..., 0].cpu().numpy()
 depth_ref[depth_ref == -1.] = 0.
-
-    
 
 
 # Patch the image with the mask
@@ -200,7 +201,7 @@ class Model(nn.Module):
         #np.random.seed(100)
         # add error on pose
         np.random.seed(50)
-        err = np.random.randn(1,7) * 0.01 *2
+        err = np.random.randn(1,7) * 0.01 * 2
         initPose += err 
  
         # Create an optimizable parameter for the x, y, z position of the camera. 
@@ -218,13 +219,14 @@ class Model(nn.Module):
         depth_zbuf = fragments.zbuf[...,0]
        
         # get relu
-        depth_mask = torch.sigmoid(1e5*depth_zbuf)
+        silhouette = self.silhouette_renderer(self.meshes, R=R, T=T)[...,3]
         depth = torch.relu(depth_zbuf)
 
         # Calculate the silhouette loss
-        loss = self.calc_loss(depth, depth_mask) 
+        loss = self.calc_loss(depth, silhouette) 
         return loss, depth
 
+    #TODO change to depth reason negative evidence
     def calc_loss(self, depth, depth_mask):
         mask = self.silhouette_ref
 
@@ -242,7 +244,7 @@ class Model(nn.Module):
         wandb.log({"Huberloss": hloss})
 
 
-        return hloss+sil_loss
+        return sil_loss+hloss
 
 
 # Initialize a model using the renderer, mesh and reference image
