@@ -48,6 +48,6 @@ def image_grid(
             ax.imshow(im[..., :3])
         else:
             # only render Alpha channel
-            ax.imshow(im[..., 3])
+            ax.imshow(im)
         if not show_axes:
             ax.set_axis_off()
