@@ -122,7 +122,7 @@ raster_settings = RasterizationSettings(
     image_size=512, 
     blur_radius=0., 
     faces_per_pixel=1, 
-    perspective_correct = False
+    #perspective_correct = False
 )
 
 # Create a silhouette mesh renderer by composing a rasterizer and a shader. 
@@ -219,7 +219,8 @@ class Model(nn.Module):
         depth_zbuf = fragments.zbuf[...,0]
        
         # get relu
-        silhouette = self.silhouette_renderer(self.meshes, R=R, T=T)[...,3]
+        silhouette = self.silhouette_renderer(self.meshes, R=R, T=T)[..., 3]
+
         depth = torch.relu(depth_zbuf)
 
         # Calculate the silhouette loss
@@ -266,7 +267,7 @@ images = wandb.Image(colors, caption="Left: target depth, Middle: initial depth,
 
 wandb.log({"Initial Error": images})        
 
-loop = tqdm(range(1000))
+loop = tqdm(range(500))
 for i in loop:
     optimizer.zero_grad()
     loss, image = model()

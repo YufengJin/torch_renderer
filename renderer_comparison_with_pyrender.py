@@ -36,7 +36,7 @@ from pytorch3d.transforms import (
 
 
 import time
-def camera_pose_from_opencv_to_pytorch(R,T):
+def camera_pose_from_opencv_to_pytorch(R, tvec):
     # TODO boardcasting the R,T
     R_pytorch3d = R.clone().permute(0, 2, 1)
     T_pytorch3d = tvec.clone()
@@ -64,8 +64,8 @@ def cameras_from_opencv_projection_no_ndc(R, tvec, camera_matrix, image_size, de
     T_pytorch3d[:, :2] *= -1
     return PerspectiveCameras(focal_length=focal_length,
                               principal_point=principal_point,
-                              R=R_pytorch3d,
-                              T=T_pytorch3d,
+                              R=None,
+                              T=None,
                               device=device,
                               in_ndc=False,
                               image_size=image_size), R_pytorch3d, T_pytorch3d
@@ -77,6 +77,7 @@ def from_tf_to_matrix(trans, rot):
     result[:3, :3] = R
     result[:3, 3]  = trans
     return result
+
 
 
 #class PoseOptimizer(nn.Module):
@@ -125,8 +126,8 @@ fx, fy, cx, cy = intrinsic[0][0],intrinsic[1][1],intrinsic[0][2],intrinsic[1][2]
 focal, principal = np.array([fx,fy], dtype = 'float64'), np.array([cx,cy], dtype='float64')
 rendered_depth_image = data['rendered_depth']
 object_mat = data['object_pose']
-DATA_DIR = "/hri/storage/user/yjin/intro_ros_ws/src/intro_object_models/models/ycb-video"
-obj_filename = os.path.join(DATA_DIR, "%03d/textured_simple.obj"%object_id_string)
+
+obj_filename =  "/home/datasets/YCB_DATASETS/models/006_mustard_bottle/textured_simple.obj"
 
 cams = {'11':{'K': K_cam11, 'Ext': extrinsic}, '12':{'K': K_cam12, 'Ext': ext_cam12}}
 #cams = {'11':{'K': K_cam11, 'Ext': ext_cam11}, '12':{'K': K_cam12, 'Ext': ext_cam12}}
@@ -137,7 +138,7 @@ meshes = load_objs_as_meshes([obj_filename], device=device)
 
 
 
-N = 10
+N = 1 
 
 tic_start = time.time()
 
@@ -172,10 +173,11 @@ raster_settings = RasterizationSettings(
 blend_params = BlendParams(sigma = 1e-4, gamma = 1e-4)
 
 silhouette_raster_settings = RasterizationSettings(
-    image_size=image_size, 
-    blur_radius=np.log(1./1e-4 -1.) * blend_params.sigma,
+    image_size=torch.tensor([image_size]), 
+    blur_radius= 0.,
+    #blur_radius=np.log(1./1e-4 -1.) * blend_params.sigma,
     # TODO figure out he meaning of arguments
-    faces_per_pixel=50, 
+    faces_per_pixel=10, 
 )
 
 lights = PointLights(device=device, location=[[0.0, 0.0, -3.0]])
@@ -186,11 +188,13 @@ tic1 = time.time()
 R = R.repeat(N,1,1); T = T.repeat(N,1); K_3 = K_3.repeat(N,1,1)    
 meshes = meshes.extend(N) 
 cameras, R_n, T_n = cameras_from_opencv_projection_no_ndc(R = R, tvec=T, camera_matrix = K_3, image_size = torch.tensor([image_size]), device=device)  
+
+R_n, T_n = camera_pose_from_opencv_to_pytorch(R, T)
 #cameras = PerspectiveCameras(in_ndc = False, device=device, R=R, T=T, K = K, image_size = torch.tensor([image_size]))
 
 
-print('translation and quaternion in torch3d: ',  T_n.squeeze().cpu().numpy(), matrix_to_quaternion(R_n).squeeze().cpu().numpy())
-print('Diff torch quat conversion and scipy , in the sequence of torch and scipy: ', matrix_to_quaternion(R_n).squeeze().cpu().numpy(), Rotation.from_matrix(R_n.squeeze().cpu().numpy()).as_quat())
+#print('translation and quaternion in torch3d: ',  T_n.squeeze().cpu().numpy(), matrix_to_quaternion(R_n).squeeze().cpu().numpy())
+#print('Diff torch quat conversion and scipy , in the sequence of torch and scipy: ', matrix_to_quaternion(R_n).squeeze().cpu().numpy(), Rotation.from_matrix(R_n.squeeze().cpu().numpy()).as_quat())
 tic2 = time.time()
 
 focal_length = torch.stack([K_3[:, 0, 0], K_3[:, 1, 1]], dim=-1)
@@ -209,6 +213,7 @@ cameras = PerspectiveCameras(focal_length=focal_length,
 # SoftPhongShader
 renderer = MeshRenderer(
     rasterizer=MeshRasterizer(
+
         cameras=cameras,
         raster_settings=raster_settings
     ),
@@ -244,17 +249,21 @@ images = renderer(meshes, R=R_n, T=T_n)
 tic4 = time.time()
 T = T_n + 0.05* torch.randn_like(T_n); 
 #print(T_n, T)
-depthes =  fragments(meshes, R = R_n, T=T_n).zbuf
+
+depthes =  fragments(meshes, R = R_n, T=T_n).zbuf[..., 0]
+depthes = torch.relu(depthes)
 #depthes =  renderer(meshes,  R=R_n, T=T_n)
 #print(depthes.shape, depthes[0,82,255,:].cpu().numpy())
+print("//////////////", depthes.shape)
 depthes_rand =  renderer(meshes, R=R_n, T=T)
 tic5 = time.time()
 
 print('create %d cameras takes %.6f secs, create renderer takes %.6f secs, color render takes %.6f, depth render takes %.6f secs'%(len(images),(tic2-tic1),(tic3-tic2),(tic4-tic3), (tic5-tic4)))
 plt.figure(figsize=(10, 10))
 plt.subplot(2,2,1); plt.imshow(rendered_depth_image);plt.axis("off"); plt.title('Pyrender')
-plt.subplot(2,2,2); plt.imshow(depthes[0, ..., 3].cpu().numpy());plt.axis("off");plt.title('Pytorch3D')
-plt.subplot(2,2,3); plt.imshow(depthes[0, ..., 3].cpu().numpy() - rendered_depth_image);plt.axis("off");plt.title('Diff')
+plt.subplot(2,2,2); plt.imshow(depthes[0].cpu().numpy());plt.axis("off");plt.title('Pytorch3D')
+plt.subplot(2,2,3); plt.imshow(depthes[0].cpu().numpy() - rendered_depth_image);plt.axis("off");plt.title('Diff'); plt.colorbar()
+plt.subplot(2,2,4); plt.imshow(images[0][...,:3].cpu().numpy());plt.axis("off");plt.title('RGB')
 
 plt.show()
     
