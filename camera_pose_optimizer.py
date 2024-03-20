@@ -56,7 +56,7 @@ wandb.init(project="depth-optimization")
 torch.autograd.set_detect_anomaly(True)
 
 def patch_image(image):
-
+    #np.random.seed(50)
     random_patch_mask = np.zeros_like(image, dtype=np.uint8)
     # find non-zero depth
     X, Y, Z = np.where(image != 0.)
@@ -93,18 +93,20 @@ verts_rgb = torch.ones_like(verts)[None]  # (1, V, 3)
 textures = TexturesVertex(verts_features=verts_rgb.to(device))
 
 # Create a Meshes object for the teapot. Here we have only one mesh in the batch.
-teapot_mesh = Meshes(
+meshes = Meshes(
     verts=[verts.to(device)],   
     faces=[faces.to(device)], 
     textures=textures
 )
+
+meshes = load_objs_as_meshes([object_p], device=device)
 
 # Initialize a perspective camera.
 cameras = FoVPerspectiveCameras(device=device)
 
 # To blend the 100 faces we set a few parameters which control the opacity and the sharpness of 
 # edges. Refer to blending.py for more details. 
-blend_params = BlendParams(sigma=1e-4, gamma=1e-4)
+blend_params = BlendParams(sigma=1e-4, gamma=1e-4, background_color= (0, 0, 0))
 
 # Define the settings for rasterization and shading. Here we set the output image to be of size
 # 256x256. To form the blended image we use 100 faces for each pixel. We also set bin_size and max_faces_per_bin to None which ensure that 
@@ -139,6 +141,22 @@ fragments = rasterizer=MeshRasterizer(
         raster_settings=raster_settings
     )
 
+lights = PointLights(device=device, location=[[0.0, 0.0, -3.0]])
+
+# SoftPhongShader
+renderer = MeshRenderer(
+    rasterizer=MeshRasterizer(
+        cameras=cameras,
+        raster_settings=raster_settings
+    ),
+    shader=SoftPhongShader(
+        device=device,
+        cameras=cameras,
+        lights=lights,
+        blend_params=blend_params
+    )
+)
+
 
 # Select the viewpoint using spherical angles  
 distance = 0.7   # distance from camera to the object
@@ -154,45 +172,54 @@ print('reference quaternion: ', quaternion_ref, quaternion_ref.size())
 quaternion_ref = quaternion_ref.cpu().numpy()
 
 # Render the teapot providing the values of R and T. 
-silhouette_ref = silhouette_renderer(meshes_world=teapot_mesh, R=R, T=T)
-depth_ref = fragments(meshes_world=teapot_mesh, R=R, T=T).zbuf
+silhouette_ref = silhouette_renderer(meshes_world=meshes, R=R, T=T)
+depth_ref = fragments(meshes_world=meshes, R=R, T=T).zbuf
+rgb_ref = renderer(meshes_world=meshes, R=R, T=T)[..., :3]
 
 silhouette_ref = silhouette_ref.cpu().numpy()
 silhouette_ref = (silhouette_ref[...,3] != 0.).astype(np.uint8)
 
 depth_ref = depth_ref[..., 0].cpu().numpy()
 depth_ref[depth_ref == -1.] = 0.
-
+rgb_full_ref = rgb_ref.cpu().numpy()
 
 # Patch the image with the mask
 image = depth_ref.transpose(1,2,0).copy()
 depth_ref = patch_image(image).transpose(2, 0, 1)
+
 silhouette_ref = (depth_ref != 0.)
 
-plt.subplot(1, 2, 1); plt.imshow(silhouette_ref.transpose(1,2,0))
-plt.subplot(1, 2, 2); plt.imshow(depth_ref.transpose(1,2,0))
+rgb_ref = np.zeros_like(rgb_full_ref)
+rgb_ref[silhouette_ref] = rgb_full_ref[silhouette_ref]
+
+plt.subplot(1, 3, 1); plt.imshow(silhouette_ref.transpose(1,2,0))
+plt.subplot(1, 3, 2); plt.imshow(depth_ref.transpose(1,2,0))
+plt.subplot(1, 3, 3); plt.imshow(rgb_ref[0])
 plt.show()
+
 
 mseloss = torch.nn.MSELoss()
 huberloss = torch.nn.HuberLoss(delta=0.05)
 l1loss = torch.nn.L1Loss()
 
 class Model(nn.Module):
-    def __init__(self, meshes, renderer, silhouette_renderer, depth_ref, silhouette_ref, cam_pose_gt):
+    def __init__(self, meshes, rasterizer, silhouette_renderer, phong_render, depth_ref, silhouette_ref, rgb_ref, cam_pose_gt):
         super().__init__()
         self.meshes = meshes
         self.device = meshes.device
-        self.renderer = renderer
+        self.rasterizer = rasterizer
         self.silhouette_renderer = silhouette_renderer
+        self.phong_render = phong_render
         
         self.losses = defaultdict(list) 
         # Get the silhouette of the reference RGB image by finding all non-white pixel values. 
         depth_ref = torch.from_numpy(depth_ref).float()
         silhouette_ref = torch.from_numpy(silhouette_ref).bool()
+        rgb_ref = torch.from_numpy(rgb_ref).float()
 
         self.register_buffer('depth_ref', depth_ref)
         self.register_buffer('silhouette_ref', silhouette_ref)
-
+        self.register_buffer('rgb_ref', rgb_ref)
 
         # camera pose gt 
         self._cam_pose_gt = cam_pose_gt
@@ -200,8 +227,7 @@ class Model(nn.Module):
         
         #np.random.seed(100)
         # add error on pose
-        np.random.seed(50)
-        err = np.random.randn(1,7) * 0.01 * 2
+        err = np.random.randn(1,7) * 0.01 * 3 
         initPose += err 
  
         # Create an optimizable parameter for the x, y, z position of the camera. 
@@ -215,52 +241,55 @@ class Model(nn.Module):
         R = quaternion_to_matrix(self.camera_position[:, 3:]).to(self.device)
         T = self.camera_position[:,:3]
         
-        fragments = self.renderer(meshes_world=self.meshes, R=R, T=T)
+        fragments = self.rasterizer(meshes_world=self.meshes, R=R, T=T)
         depth_zbuf = fragments.zbuf[...,0]
-       
-        # get relu
-        silhouette = self.silhouette_renderer(self.meshes, R=R, T=T)[..., 3]
-
         depth = torch.relu(depth_zbuf)
 
+        silhouette = self.silhouette_renderer(self.meshes, R=R, T=T)[..., 3]
+
+        color = self.phong_render(self.meshes, R=R, T=T)[..., :3]
+
         # Calculate the silhouette loss
-        loss = self.calc_loss(depth, silhouette) 
-        return loss, depth
+        loss = self.calc_loss(depth, silhouette , color) 
+        return loss, depth, color
 
     #TODO change to depth reason negative evidence
-    def calc_loss(self, depth, depth_mask):
+    def calc_loss(self, depth, depth_mask, color):
         mask = self.silhouette_ref
 
         sil_loss = l1loss(depth_mask, mask.float())
 
+        color_loss = mseloss(color, self.rgb_ref)
+
         depth_gt = torch.masked_select(self.depth_ref, mask)
         depth = torch.masked_select(depth, mask)
 
-        loss = mseloss(depth, depth_gt) 
-        wandb.log({"MESloss": loss})
-
-        wandb.log({"silhouette_loss": sil_loss})
+        depthLoss = mseloss(depth, depth_gt) 
 
         hloss = huberloss(depth, depth_gt)
-        wandb.log({"Huberloss": hloss})
+        wandb.log({"depthMSE": depthLoss})
+        wandb.log({"colorMSE": color_loss})
+        wandb.log({"silhouette_l1": sil_loss})
+        wandb.log({"depthHuber": hloss})
 
 
-        return sil_loss+hloss
+        return sil_loss+hloss+color_loss*0.01
 
 
 # Initialize a model using the renderer, mesh and reference image
-model = Model(meshes=teapot_mesh, renderer=fragments, silhouette_renderer = silhouette_renderer, depth_ref=depth_ref, silhouette_ref=silhouette_ref, cam_pose_gt=quaternion_ref).to(device)
+model = Model(meshes=meshes, rasterizer=fragments, silhouette_renderer = silhouette_renderer, phong_render = renderer, depth_ref=depth_ref, silhouette_ref=silhouette_ref, rgb_ref = rgb_ref, cam_pose_gt=quaternion_ref).to(device)
 
 # Create an optimizer. Here we are using Adam and we pass in the parameters of the model
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 
-_, image_init = model()
+_, depth_init, color = model()
 
-image_gt = model.depth_ref.detach().squeeze().cpu().numpy()
-image_init = image_init.detach().squeeze().cpu().numpy()
-diff = (image_init-image_gt)**2
-images = np.hstack((image_gt, image_init, diff))
+depth_gt = model.depth_ref.detach().squeeze().cpu().numpy()
+color_gt = model.rgb_ref.detach().squeeze().cpu().numpy()
+depth_init = depth_init.detach().squeeze().cpu().numpy()
+diff = (depth_init-depth_gt)**2
+images = np.hstack((depth_gt, depth_init, diff))
 colors = colormap(norm(images))
 
 images = wandb.Image(colors, caption="Left: target depth, Middle: initial depth, Right: depth diff")
@@ -270,7 +299,7 @@ wandb.log({"Initial Error": images})
 loop = tqdm(range(500))
 for i in loop:
     optimizer.zero_grad()
-    loss, image = model()
+    loss, depth, color = model()
     loss.backward()
     
     optimizer.step()
@@ -282,21 +311,28 @@ for i in loop:
     
     # Save outputs to create a GIF. 
     if i % 10 == 0:
-        image = image.detach().squeeze().cpu().numpy()
-        diff = (image-image_gt)**2
-        images = np.hstack((image_gt, image, diff))
-        cv2.imshow("Diff", cv2.cvtColor(colormap(norm(images)).astype(np.float32), cv2.COLOR_BGR2RGB))
+        depth = depth.detach().squeeze().cpu().numpy()
+        diff = (depth-depth_gt)**2
+        images = np.hstack((depth_gt, depth, diff))
+        images = cv2.cvtColor(colormap(norm(images)).astype(np.float32), cv2.COLOR_BGR2RGB)
+        images_color = np.ones_like(images)
+        images_color[:, :512, :] = color_gt
+        images_color[:,512:2*512, :] = color.detach().squeeze().cpu().numpy()
+        images_color[:,2*512:, :] = norm(color.detach().squeeze().cpu().numpy() - color_gt)
+        images = np.vstack((images, images_color))
+
+        cv2.imshow("Diff", images)
 
         # Check for key press
         key = cv2.waitKey(30) & 0xFF
         if key == ord('q'):  # Press 'q' to quit
             break
 
-if not isinstance(image, np.ndarray):
-    image = image.detach().squeeze().cpu().numpy()
+if not isinstance(depth, np.ndarray):
+    depth = depth.detach().squeeze().cpu().numpy()
 
-diff = (image-image_gt)**2
-images = np.hstack((image_gt, image, diff))
+diff = (depth-depth_gt)**2
+images = np.hstack((depth_gt, depth, diff))
  
 colors = colormap(norm(images))
 images = wandb.Image(colors, caption="Left: target depth, Middle: final depth, Right: depth diff")
